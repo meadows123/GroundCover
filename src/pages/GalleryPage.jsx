@@ -8,6 +8,7 @@ import { BookingModal } from '@/components/BookingModal';
 const GalleryPage = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [activeFilter, setActiveFilter] = useState('All');
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
 
   const filters = ['All', 'Garden Design', 'Patios & Driveways', 'Landscape Architecture', 'Maintenance', 'Commercial'];
 
