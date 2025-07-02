@@ -84,7 +84,7 @@ const HomePage = () => {
 
   return (
     <>
-      <div className="pt-16">
+      <div className="pt-16 overflow-x-hidden">
         {/* Hero Section */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#5B8B6B] via-[#7A5E3A] to-[#5B8B6B]">
           <div className="absolute inset-0 z-0">
@@ -104,7 +104,7 @@ const HomePage = () => {
               className="mb-8"
             >
               <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-6">
-                <Leaf className="w-5 h-5 text-[#FFC107]" />
+                <Leaf className="w-5 h-5 text-[#fedd55]" />
                 <span className="text-sm font-medium">Your Grounds Maintenance Experts</span>
               </div>
             </motion.div>
@@ -115,7 +115,7 @@ const HomePage = () => {
               transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
               className="text-5xl md:text-8xl font-bold mb-8 leading-tight"
             >
-              <span className="text-[#FFC107]">
+              <span className="text-[#fedd55]">
                 Transforming
               </span>
               <br />
@@ -140,19 +140,19 @@ const HomePage = () => {
               <Button 
                 size="lg" 
                 onClick={() => setIsBookingModalOpen(true)}
-                className="bg-[#FFC107] hover:bg-[#FFD700] text-white font-semibold px-10 py-6 text-lg rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300 border-0"
+                className="bg-[#fedd55] hover:bg-[#fedd55] text-white font-semibold px-6 sm:px-10 py-6 text-base sm:text-lg rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300 border-0"
               >
-                Get Free Consultation
-                <CalendarDays className="ml-3 w-6 h-6" />
+                <span className="whitespace-nowrap">Get Free Consultation</span>
+                <CalendarDays className="ml-2 sm:ml-3 w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" />
               </Button>
               
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="bg-white/10 backdrop-blur-sm text-white border-white/30 hover:bg-white hover:text-[#5B8B6B] font-semibold px-10 py-6 text-lg rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300"
+                className="bg-white/10 backdrop-blur-sm text-white border-white/30 hover:bg-white hover:text-[#5B8B6B] font-semibold px-6 sm:px-10 py-6 text-base sm:text-lg rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300"
               >
-                <Phone className="mr-3 w-6 h-6" />
-                Call Now: +44 7510 359770
+                <Phone className="mr-2 sm:mr-3 w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" />
+                <span className="whitespace-nowrap">Call: +44 7510 359770</span>
               </Button>
             </motion.div>
 
@@ -161,14 +161,14 @@ const HomePage = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
-              className="mt-16 flex flex-col sm:flex-row gap-6 justify-center items-center text-sm"
+              className="mt-16 flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center text-xs sm:text-sm"
             >
-              <div className="flex items-center gap-2 text-gray-300">
-                <Mail className="w-4 h-4" />
-                <span>groundcovergardencare@gmail.com</span>
+              <div className="flex items-center gap-2 text-gray-300 break-all">
+                <Mail className="w-4 h-4 flex-shrink-0" />
+                <span className="break-all">groundcovergardencare@gmail.com</span>
               </div>
               <div className="flex items-center gap-2 text-gray-300">
-                <MapPin className="w-4 h-4" />
+                <MapPin className="w-4 h-4 flex-shrink-0" />
                 <span>Bristol & South West</span>
               </div>
             </motion.div>
@@ -229,7 +229,7 @@ const HomePage = () => {
               <Link to="/gallery">
                 <Button 
                   size="lg" 
-                  className="bg-[#E1B941] hover:bg-[#FFD700] text-white font-semibold px-10 py-4 text-lg rounded-2xl shadow-xl transform hover:scale-105 transition-all duration-300"
+                  className="bg-[#fedd55] hover:bg-[#fedd55] text-white font-semibold px-10 py-4 text-lg rounded-2xl shadow-xl transform hover:scale-105 transition-all duration-300"
                 >
                   View Full Portfolio
                   <ArrowRight className="ml-3 w-5 h-5" />
@@ -258,7 +258,7 @@ const HomePage = () => {
                   <p>
                     Ground cover was established in 2020 by David Jones and Jack Fleming. Based in the heart of Bristol, our team is committed to delivering exceptional Landscaping & Maintenance services.
                   </p>
-                  <div className="border-l-4 border-[#FFC107] pl-6 bg-[#FFC107]/5 py-4">
+                  <div className="border-l-4 border-[#fedd55] pl-6 bg-[#fedd55]/5 py-4">
                     <h3 className="text-2xl font-bold text-[#5B8B6B] mb-4">Our Commitment</h3>
                     <p>
                       Groundcover is dedicated to providing top Landscaping & Maintenance services that not just meets, but exceed our clients' expectations. We understand that every space is unique, and we approach each job with a keen eye for detail and a passion for creating stunning outdoor environments.
@@ -294,8 +294,8 @@ const HomePage = () => {
               viewport={{ once: true }}
               className="text-center mb-20"
             >
-              <div className="inline-flex items-center gap-2 bg-[#E1B941]/10 rounded-full px-6 py-3 mb-6">
-                <Star className="w-5 h-5 text-[#E1B941] fill-current" />
+                              <div className="inline-flex items-center gap-2 bg-[#fedd55]/10 rounded-full px-6 py-3 mb-6">
+                  <Star className="w-5 h-5 text-[#fedd55] fill-current" />
                 <span className="text-sm font-medium text-[#5B8B6B]">5-Star Google Reviews</span>
               </div>
               <h2 className="text-5xl md:text-6xl font-bold text-[#5B8B6B] mb-6">
@@ -340,7 +340,7 @@ const HomePage = () => {
                   {/* Star rating */}
                   <div className="flex gap-1 mb-4">
                     {[...Array(review.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-[#E1B941] fill-current" />
+                                              <Star key={i} className="w-5 h-5 text-[#fedd55] fill-current" />
                     ))}
                   </div>
 
@@ -371,7 +371,7 @@ const HomePage = () => {
                 href="https://www.google.com/search?q=groundcover+bristol&sca_esv=32f9ae821a1b1a5d&sxsrf=AE3TifP0MjA91bRXZ2aYPE1Zx_V-9W8nZA%3A1751355649753&ei=AZFjaP_dLe-khbIPtr22-Qs&ved=0ahUKEwi_4oOblJuOAxVvUkEAHbaeLb8Q4dUDCBA&uact=5&oq=groundcover+bristol&gs_lp=Egxnd3Mtd2l6LXNlcnAaAhgCIhNncm91bmRjb3ZlciBicmlzdG9sMgQQIxgnMgcQABiABBgNMgsQABiABBiGAxiKBTILEAAYgAQYhgMYigUyCxAAGIAEGIYDGIoFMgsQABiABBiGAxiKBTILEAAYgAQYhgMYigUyCBAAGKIEGIkFMggQABiiBBiJBTIIEAAYogQYiQVI3xJQsgRYoBBwAXgBkAEDmAHNAqABhQuqAQczLjAuMi4yuAEDyAEA-AEBmAIFoALLBMICBxAjGLADGCfCAgoQABiwAxjWBBhHwgINEAAYgAQYsAMYQxiKBcICChAAGIAEGEMYigXCAgoQABiABBgUGIcCwgIFEAAYgATCAggQABiABBiLA8ICChAuGIAEGBQYhwLCAgYQABgWGB6YAwCIBgGQBgqSBwUyLjIuMaAHzT2yBwUxLjIuMbgHrwTCBwUzLTMuMsgHUw&sclient=gws-wiz-serp#lrd=0x6fd7861ade6d7c0f:0x55fb7ba8bd4ced45,1,,,,"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-[#E1B941] text-white px-8 py-4 rounded-2xl font-semibold hover:bg-[#FFD700] transition-colors duration-300 cursor-pointer"
+                className="inline-flex items-center gap-3 bg-[#fedd55] text-white px-8 py-4 rounded-2xl font-semibold hover:bg-[#fedd55] transition-colors duration-300 cursor-pointer"
               >
                 <Star className="w-5 h-5 fill-current" />
                 <span>Read All Reviews on Google</span>
@@ -413,7 +413,7 @@ const HomePage = () => {
                   className="text-center p-8 rounded-3xl bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 transform hover:-translate-y-2 group"
                 >
                   <div className="w-20 h-20 bg-gradient-to-br from-[#5B8B6B] to-[#7A5E3A] rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <feature.icon className="w-10 h-10 text-[#E1B941]" />
+                    <feature.icon className="w-10 h-10 text-[#fedd55]" />
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-4">{feature.title}</h3>
                   <p className="text-gray-300 leading-relaxed">{feature.description}</p>
@@ -462,17 +462,17 @@ const HomePage = () => {
 
               <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-white">
                 <div className="flex flex-col items-center">
-                  <Phone className="w-8 h-8 mb-3 text-[#FFC107]" />
+                  <Phone className="w-8 h-8 mb-3 text-[#fedd55]" />
                   <h4 className="font-semibold text-lg mb-2">Phone</h4>
                   <p className="text-white/80">+44 7510 359770</p>
                 </div>
                 <div className="flex flex-col items-center">
-                  <Mail className="w-8 h-8 mb-3 text-[#FFC107]" />
+                  <Mail className="w-8 h-8 mb-3 text-[#fedd55]" />
                   <h4 className="font-semibold text-lg mb-2">Email</h4>
                   <p className="text-white/80">groundcovergardencare@gmail.com</p>
                 </div>
                 <div className="flex flex-col items-center">
-                  <MapPin className="w-8 h-8 mb-3 text-[#FFC107]" />
+                  <MapPin className="w-8 h-8 mb-3 text-[#fedd55]" />
                   <h4 className="font-semibold text-lg mb-2">Service Area</h4>
                   <p className="text-white/80">Bristol & South West</p>
                 </div>

@@ -205,7 +205,7 @@ const GalleryPage = () => {
             className="mb-8"
           >
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-6">
-              <Sparkles className="w-5 h-5 text-[#FFC107]" />
+                              <Sparkles className="w-5 h-5 text-[#fedd55]" />
               <span className="text-sm font-medium">Premium Portfolio</span>
             </div>
           </motion.div>
@@ -216,7 +216,7 @@ const GalleryPage = () => {
             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
             className="text-6xl md:text-8xl font-bold mb-8 leading-tight"
           >
-            <span className="text-[#FFC107]">
+            <span className="text-[#fedd55]">
               Our Work
             </span>
           </motion.h1>
@@ -394,7 +394,7 @@ const GalleryPage = () => {
 
       {/* Contact CTA */}
               <section className="py-24 bg-gradient-to-br from-[#5B8B6B] to-[#7A5E3A] relative overflow-hidden">
-                        <div className="absolute inset-0 bg-[url('/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_5055.jpeg')] bg-cover bg-center opacity-10"></div>
+                        <div className="absolute inset-0 bg-[url('/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_7853.jpeg')] bg-cover bg-center opacity-10"></div>
         <div className="relative z-10 max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -402,8 +402,8 @@ const GalleryPage = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <Leaf className="w-16 h-16 text-[#FFC107] mx-auto mb-6" />
-            <h2 className="text-5xl md:text-6xl font-bold text-[#E1B941] mb-8">
+                            <Leaf className="w-16 h-16 text-[#fedd55] mx-auto mb-6" />
+                <h2 className="text-5xl md:text-6xl font-bold text-[#fedd55] mb-8">
               Ready for Your Transformation?
             </h2>
             <p className="text-xl text-white mb-12 max-w-2xl mx-auto leading-relaxed">
@@ -461,7 +461,7 @@ const GalleryPage = () => {
               <h3 className="text-2xl font-bold mb-2 text-white">{selectedImage.title}</h3>
               <p className="text-white mb-2">{selectedImage.description}</p>
               <div className="flex items-center justify-between">
-                                  <span className="text-[#E1B941] font-medium">{selectedImage.category}</span>
+                                  <span className="text-[#fedd55] font-medium">{selectedImage.category}</span>
                 <span className="text-gray-200">{selectedImage.location}</span>
               </div>
             </div>
