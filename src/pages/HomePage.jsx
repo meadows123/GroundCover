@@ -105,7 +105,7 @@ const HomePage = () => {
             >
               <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-6">
                 <Leaf className="w-5 h-5 text-[#FFC107]" />
-                <span className="text-sm font-medium">Premium Landscaping Services</span>
+                <span className="text-sm font-medium">Your Grounds Maintenance Experts</span>
               </div>
             </motion.div>
 
@@ -128,7 +128,7 @@ const HomePage = () => {
               transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
               className="text-xl md:text-2xl mb-12 text-gray-200 font-light max-w-3xl mx-auto leading-relaxed"
             >
-              Professional landscaping, garden design, and outdoor living solutions across Bristol and the South West
+              At Ground Cover, we specialise in reliable, year-round grounds maintenance for commercial clients. From business parks and schools to housing developments and retail spaces — we keep your grounds safe, tidy, and well-presented.
             </motion.p>
             
             <motion.div
@@ -236,6 +236,51 @@ const HomePage = () => {
                 </Button>
               </Link>
             </motion.div>
+          </div>
+        </section>
+
+        {/* Company History & Commitment Section */}
+        <section className="py-24 bg-gradient-to-br from-gray-50 to-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <div className="inline-flex items-center gap-2 bg-[#5B8B6B]/10 rounded-full px-6 py-3 mb-6">
+                  <Users className="w-5 h-5 text-[#5B8B6B]" />
+                  <span className="text-sm font-medium text-[#5B8B6B]">Trusted Grounds Maintenance Experts</span>
+                </div>
+                <h2 className="text-5xl font-bold text-[#5B8B6B] mb-8">Our Foundation</h2>
+                <div className="space-y-6 text-lg text-[#7A5E3A] leading-relaxed">
+                  <p>
+                    Ground cover was established in 2020 by David Jones and Jack Fleming. Based in the heart of Bristol, our team is committed to delivering exceptional Landscaping & Maintenance services.
+                  </p>
+                  <div className="border-l-4 border-[#FFC107] pl-6 bg-[#FFC107]/5 py-4">
+                    <h3 className="text-2xl font-bold text-[#5B8B6B] mb-4">Our Commitment</h3>
+                    <p>
+                      Groundcover is dedicated to providing top Landscaping & Maintenance services that not just meets, but exceed our clients' expectations. We understand that every space is unique, and we approach each job with a keen eye for detail and a passion for creating stunning outdoor environments.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="rounded-3xl overflow-hidden shadow-2xl"
+              >
+                <img 
+                  className="w-full h-auto object-cover"
+                  alt="David Jones and Jack Fleming - GroundCover founders"
+                  src="/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_1011.jpg"
+                />
+              </motion.div>
+            </div>
           </div>
         </section>
 

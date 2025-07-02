@@ -312,58 +312,119 @@ const GalleryPage = () => {
             </div>
           </motion.div>
 
-          {/* Portfolio Grid */}
+          {/* Mobile-First Dynamic Portfolio Grid with Varied Shapes */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+            className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-4 auto-rows-[200px] md:auto-rows-[250px]"
           >
-            {filteredImages.map((project, index) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.05 }}
-                viewport={{ once: true }}
-                className="group relative overflow-hidden rounded-3xl shadow-luxury hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2 cursor-pointer"
-                onClick={() => openLightbox(project)}
-              >
-                <div className="aspect-[4/5] overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 filter contrast-110 saturate-110"
-                    loading="lazy"
-                    onError={(e) => {
-                      console.error('Failed to load image:', project.image);
-                      e.target.src = '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_5031.jpeg'; // Fallback image
-                    }}
-                    onLoad={() => console.log('Successfully loaded:', project.image)}
-                  />
-                </div>
-                
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 gallery-text-overlay">
-                  <div className="flex items-center gap-2 mb-2">
-                                          <span className="text-xs font-medium bg-[#E1B941] px-3 py-1 rounded-full text-black">
-                      {project.category}
-                    </span>
+            {filteredImages.map((project, index) => {
+              // Create varied layout patterns for visual interest
+              const patterns = [
+                'col-span-2 row-span-2', // Large square
+                'col-span-1 row-span-2', // Tall rectangle
+                'col-span-2 row-span-1', // Wide rectangle  
+                'col-span-1 row-span-1', // Small square
+                'col-span-2 row-span-2', // Another large square
+                'col-span-1 row-span-1', // Small square
+                'col-span-1 row-span-2', // Tall rectangle
+                'col-span-2 row-span-1', // Wide rectangle
+              ];
+              const layoutClass = patterns[index % patterns.length];
+              
+              return (
+                <motion.div
+                  key={project.id}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.05 }}
+                  viewport={{ once: true }}
+                  className={`group relative overflow-hidden rounded-2xl md:rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1 cursor-pointer ${layoutClass}`}
+                  onClick={() => openLightbox(project)}
+                >
+                  <div className="w-full h-full overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 filter contrast-110 saturate-110"
+                      loading="lazy"
+                      onError={(e) => {
+                        console.error('Failed to load image:', project.image);
+                        e.target.src = '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_5031.jpeg'; // Fallback image
+                      }}
+                    />
                   </div>
-                  <h3 className="text-lg font-bold mb-2 text-white drop-shadow-lg line-clamp-1">{project.title}</h3>
-                  <p className="text-white text-xs mb-3 drop-shadow-md line-clamp-2 leading-relaxed">{project.description}</p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs text-gray-200 drop-shadow-md truncate flex-1 mr-2">{project.location}</span>
-                                          <div className="flex items-center gap-1 text-[#E1B941] drop-shadow-md flex-shrink-0">
-                      <Eye className="w-3 h-3" />
-                      <span className="text-xs">View</span>
+                  
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                  
+                  {/* Eye icon for hover effect */}
+                  <div className="absolute top-2 md:top-4 right-2 md:right-4 w-8 h-8 md:w-10 md:h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-75 group-hover:scale-100">
+                    <Eye className="w-4 h-4 md:w-5 md:h-5 text-white" />
+                  </div>
+                  
+                  {/* Content overlay */}
+                  <div className="absolute bottom-0 left-0 right-0 p-2 md:p-4 text-white">
+                    <div className="flex items-center gap-2 mb-1 md:mb-2">
+                      <span className="text-xs font-medium bg-[#E1B941] px-2 py-1 rounded-full text-black">
+                        {project.category}
+                      </span>
+                    </div>
+                    <h3 className="text-sm md:text-lg font-bold mb-1 text-white drop-shadow-lg line-clamp-1">{project.title}</h3>
+                    
+                    {/* Show description only on larger cards */}
+                    {(layoutClass.includes('col-span-2') || layoutClass.includes('row-span-2')) && (
+                      <p className="text-white text-xs md:text-sm mb-2 drop-shadow-md line-clamp-2 leading-relaxed hidden md:block">{project.description}</p>
+                    )}
+                    
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs text-gray-200 drop-shadow-md truncate flex-1 mr-2">{project.location}</span>
+                      <div className="flex items-center gap-1 text-[#E1B941] drop-shadow-md flex-shrink-0">
+                        <span className="text-xs hidden md:inline">View</span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
+          </motion.div>
+
+          {/* Additional Circular Gallery Elements for Visual Interest */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="mt-16"
+          >
+            <h3 className="text-2xl md:text-3xl font-bold text-center text-[#5B8B6B] mb-8">Project Highlights</h3>
+            <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+              {filteredImages.slice(0, 8).map((project, index) => (
+                <motion.div
+                  key={`circle-${project.id}`}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="group cursor-pointer"
+                  onClick={() => openLightbox(project)}
+                >
+                  <div className="relative w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover rounded-full transition-transform duration-300 group-hover:scale-110 shadow-lg border-2 border-white"
+                    />
+                    <div className="absolute inset-0 bg-black/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <Eye className="w-4 h-4 md:w-5 md:h-5 text-white" />
+                    </div>
+                  </div>
+                  <p className="text-xs text-center mt-2 text-[#5B8B6B] font-medium line-clamp-1 max-w-20 md:max-w-24">{project.category}</p>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>
