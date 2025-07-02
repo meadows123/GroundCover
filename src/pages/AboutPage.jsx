@@ -193,7 +193,7 @@ const AboutPage = () => {
               <img 
                 className="w-full h-auto object-cover"
                 alt="GroundCover team working on a beautiful landscape project"
-                src="/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_5223.jpeg"
+                src="/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_1011.jpg"
               />
             </motion.div>
           </div>
