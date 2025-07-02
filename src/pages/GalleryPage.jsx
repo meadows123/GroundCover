@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight, Eye, ArrowRight, Sparkles, Leaf } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import BeforeAfterSlider from '@/components/BeforeAfterSlider';
+import { BookingModal } from '@/components/BookingModal';
 
 const GalleryPage = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -333,12 +334,18 @@ const GalleryPage = () => {
                     src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 filter contrast-110 saturate-110"
+                    loading="lazy"
+                    onError={(e) => {
+                      console.error('Failed to load image:', project.image);
+                      e.target.src = '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_5031.jpeg'; // Fallback image
+                    }}
+                    onLoad={() => console.log('Successfully loaded:', project.image)}
                   />
                 </div>
                 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 gallery-text-overlay">
                   <div className="flex items-center gap-2 mb-2">
                                           <span className="text-xs font-medium bg-[#E1B941] px-3 py-1 rounded-full text-black">
                       {project.category}
@@ -398,6 +405,10 @@ const GalleryPage = () => {
               alt={selectedImage.title}
               className="max-w-full max-h-full object-contain rounded-2xl shadow-3xl"
               onClick={(e) => e.stopPropagation()}
+              onError={(e) => {
+                console.error('Failed to load lightbox image:', selectedImage.image);
+                e.target.src = '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_5031.jpeg'; // Fallback image
+              }}
             />
             
             <button

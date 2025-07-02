@@ -128,9 +128,9 @@ const AboutPage = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-            className="text-6xl md:text-8xl font-bold mb-8 leading-tight"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-8 leading-tight"
           >
-                          <span className="text-[#FFC107]">
+            <span className="text-[#FFC107]">
               About GroundCover
             </span>
           </motion.h1>
@@ -321,11 +321,11 @@ const AboutPage = () => {
                   <div className="w-14 h-14 bg-gradient-to-br from-[#5B8B6B] to-[#7A5E3A] rounded-xl flex items-center justify-center">
                     <Mail className="w-7 h-7 text-[#E1B941]" />
                   </div>
-                                  <div>
-                  <h4 className="text-lg font-semibold text-[#5B8B6B] mb-1">Email Us</h4>
-                  <p className="text-[#7A5E3A] text-lg">groundcovergardencare@gmail.com</p>
-                  <p className="text-sm text-gray-500">We respond within 4 hours</p>
-                </div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-[#5B8B6B] mb-1">Email Us</h4>
+                    <p className="text-[#7A5E3A] text-lg">groundcovergardencare@gmail.com</p>
+                    <p className="text-sm text-gray-500">We respond within 4 hours</p>
+                  </div>
                 </div>
 
                 <div className="flex items-center gap-4 p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
@@ -512,7 +512,7 @@ const AboutPage = () => {
                   ) : (
                     <div className="flex items-center justify-center gap-3">
                       <Send className="w-5 h-5" />
-                      Send Message & Get Free Quote
+                      Get Free Quote
                     </div>
                   )}
                 </Button>
