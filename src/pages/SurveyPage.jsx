@@ -159,9 +159,9 @@ const SurveyPage = () => {
             key={star}
             className={`${size} ${
               star <= rating 
-                ? 'text-[#FFC107] fill-[#FFC107]' 
+                ? 'text-[#fedd55] fill-[#fedd55]' 
                 : 'text-gray-300'
-            } cursor-pointer hover:text-[#FFC107] transition-colors`}
+            } cursor-pointer hover:text-[#fedd55] transition-colors`}
             onClick={() => handleStarClick(category, star)}
           />
         ))}
@@ -182,8 +182,8 @@ const SurveyPage = () => {
             className="mb-8"
           >
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-6">
-              <MessageSquare className="w-5 h-5 text-[#FFC107]" />
-              <span className="text-sm font-medium">Customer Feedback Survey</span>
+              <MessageSquare className="w-5 h-5 text-[#fedd55]" />
+              <span className="text-sm font-medium text-[#fedd55]">Customer Feedback Survey</span>
             </div>
           </motion.div>
 
@@ -193,7 +193,7 @@ const SurveyPage = () => {
             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-8 leading-tight"
           >
-            <span className="text-[#FFC107]">
+            <span className="text-[#fedd55]">
               Share Your Experience
             </span>
           </motion.h1>
@@ -229,7 +229,7 @@ const SurveyPage = () => {
                     value={surveyData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFC107] transition-all"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] transition-all"
                     placeholder="Enter your full name"
                   />
                 </div>
@@ -242,7 +242,7 @@ const SurveyPage = () => {
                     value={surveyData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFC107] transition-all"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] transition-all"
                     placeholder="your.email@example.com"
                   />
                 </div>
@@ -254,7 +254,7 @@ const SurveyPage = () => {
                   name="projectType"
                   value={surveyData.projectType}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFC107] transition-all"
+                  className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] transition-all"
                 >
                   <option value="">Select your project type</option>
                   {projectTypes.map((type) => (
@@ -312,7 +312,7 @@ const SurveyPage = () => {
                     onChange={handleInputChange}
                     required
                     rows={5}
-                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFC107] transition-all resize-none"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] transition-all resize-none"
                     placeholder="Please share your complete experience with GroundCover - from initial contact to project completion..."
                   />
                 </div>
@@ -324,7 +324,7 @@ const SurveyPage = () => {
                     value={surveyData.bestAspects}
                     onChange={handleInputChange}
                     rows={3}
-                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFC107] transition-all resize-none"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] transition-all resize-none"
                     placeholder="Tell us what impressed you most..."
                   />
                 </div>
@@ -340,7 +340,7 @@ const SurveyPage = () => {
                           value={option}
                           checked={surveyData.wouldRecommend === option}
                           onChange={handleInputChange}
-                          className="mr-2 text-[#FFC107] focus:ring-[#FFC107]"
+                          className="mr-2 text-[#fedd55] focus:ring-[#fedd55]"
                         />
                         <span className="text-[#7A5E3A]">{option}</span>
                       </label>
@@ -352,11 +352,11 @@ const SurveyPage = () => {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-[#FFC107] hover:bg-[#FFD700] text-white font-semibold py-4 text-lg rounded-xl shadow-xl transform hover:scale-105 transition-all duration-300 disabled:opacity-50"
+                className="w-full bg-[#fedd55] hover:bg-[#fedd55] text-black font-semibold py-4 text-lg rounded-xl shadow-xl transform hover:scale-105 transition-all duration-300 disabled:opacity-50"
               >
                 {isSubmitting ? (
                   <div className="flex items-center justify-center gap-3">
-                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                    <div className="w-5 h-5 border-2 border-black border-t-transparent rounded-full animate-spin"></div>
                     Submitting Survey...
                   </div>
                 ) : (

@@ -105,11 +105,11 @@ export const BookingModal = ({ isOpen, setIsOpen }) => {
                       <Button
                         variant={"outline"}
                         className={cn(
-                          "w-full justify-start text-left font-normal border-[#FFC107] hover:border-[#5B8B6B]",
+                          "w-full justify-start text-left font-normal border-[#fedd55] hover:border-[#5B8B6B]",
                           !selectedDate && "text-muted-foreground"
                         )}
                       >
-                        <CalendarIcon className="mr-2 h-4 w-4 text-[#FFC107]" />
+                        <CalendarIcon className="mr-2 h-4 w-4 text-[#fedd55]" />
                         {selectedDate ? format(selectedDate, "PPP") : <span>Pick a date</span>}
                       </Button>
                     </PopoverTrigger>
@@ -123,7 +123,7 @@ export const BookingModal = ({ isOpen, setIsOpen }) => {
                         className="text-[#5B8B6B]"
                         classNames={{
                           day_selected: "bg-[#5B8B6B] text-white hover:bg-[#5B8B6B] focus:bg-[#5B8B6B]",
-                          day_today: "text-[#FFC107] font-bold",
+                          day_today: "text-[#fedd55] font-bold",
                         }}
                       />
                     </PopoverContent>
@@ -144,7 +144,7 @@ export const BookingModal = ({ isOpen, setIsOpen }) => {
                         onClick={() => setSelectedTime(time)}
                         className={cn(
                           "w-full",
-                          selectedTime === time ? "bg-[#5B8B6B] text-white hover:bg-[#5B8B6B]/90" : "border-[#FFC107] text-[#7A5E3A] hover:bg-[#F5F5EB] hover:border-[#5B8B6B]"
+                          selectedTime === time ? "bg-[#5B8B6B] text-white hover:bg-[#5B8B6B]/90" : "border-[#fedd55] text-[#7A5E3A] hover:bg-[#F5F5EB] hover:border-[#5B8B6B]"
                         )}
                       >
                         <Clock className="mr-2 h-4 w-4" /> {time}
@@ -161,14 +161,14 @@ export const BookingModal = ({ isOpen, setIsOpen }) => {
                     Full Name <span className="text-red-500">*</span>
                   </label>
                   <div className="relative">
-                    <User className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-[#FFC107]" />
+                    <User className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-[#fedd55]" />
                     <input
                       type="text"
                       id="name"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       required
-                      className="w-full pl-10 pr-3 py-2 border border-[#FFC107] rounded-md shadow-sm focus:ring-[#5B8B6B] focus:border-[#5B8B6B] sm:text-sm"
+                      className="w-full pl-10 pr-3 py-2 border border-[#fedd55] rounded-md shadow-sm focus:ring-[#5B8B6B] focus:border-[#5B8B6B] sm:text-sm"
                       placeholder="e.g. John Doe"
                     />
                   </div>
@@ -178,14 +178,14 @@ export const BookingModal = ({ isOpen, setIsOpen }) => {
                     Email Address <span className="text-red-500">*</span>
                   </label>
                   <div className="relative">
-                    <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-[#FFC107]" />
+                    <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-[#fedd55]" />
                     <input
                       type="email"
                       id="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       required
-                      className="w-full pl-10 pr-3 py-2 border border-[#FFC107] rounded-md shadow-sm focus:ring-[#5B8B6B] focus:border-[#5B8B6B] sm:text-sm"
+                      className="w-full pl-10 pr-3 py-2 border border-[#fedd55] rounded-md shadow-sm focus:ring-[#5B8B6B] focus:border-[#5B8B6B] sm:text-sm"
                       placeholder="e.g. john.doe@example.com"
                     />
                   </div>
@@ -195,13 +195,13 @@ export const BookingModal = ({ isOpen, setIsOpen }) => {
                     Phone Number (Optional)
                   </label>
                   <div className="relative">
-                    <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-[#FFC107]" />
+                    <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-[#fedd55]" />
                     <input
                       type="tel"
                       id="phone"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
-                      className="w-full pl-10 pr-3 py-2 border border-[#FFC107] rounded-md shadow-sm focus:ring-[#5B8B6B] focus:border-[#5B8B6B] sm:text-sm"
+                      className="w-full pl-10 pr-3 py-2 border border-[#fedd55] rounded-md shadow-sm focus:ring-[#5B8B6B] focus:border-[#5B8B6B] sm:text-sm"
                       placeholder="e.g. 07123 456789"
                     />
                   </div>
@@ -211,13 +211,13 @@ export const BookingModal = ({ isOpen, setIsOpen }) => {
                     Project Details (Optional)
                   </label>
                   <div className="relative">
-                    <MessageSquare className="absolute left-3 top-3 h-5 w-5 text-[#FFC107]" />
+                    <MessageSquare className="absolute left-3 top-3 h-5 w-5 text-[#fedd55]" />
                     <textarea
                       id="message"
                       rows={3}
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
-                      className="w-full pl-10 pr-3 py-2 border border-[#FFC107] rounded-md shadow-sm focus:ring-[#5B8B6B] focus:border-[#5B8B6B] sm:text-sm"
+                      className="w-full pl-10 pr-3 py-2 border border-[#fedd55] rounded-md shadow-sm focus:ring-[#5B8B6B] focus:border-[#5B8B6B] sm:text-sm"
                       placeholder="Tell us a bit about your project or any specific requirements..."
                     />
                   </div>
@@ -227,7 +227,7 @@ export const BookingModal = ({ isOpen, setIsOpen }) => {
               {/* Submit Button */}
               <Button
                 type="submit"
-                className="w-full bg-[#FFC107] hover:bg-[#FFD700] text-white font-semibold py-3 text-lg"
+                className="w-full bg-[#fedd55] hover:bg-[#fedd55] text-black font-semibold py-3 text-lg"
               >
                 Request Free Visit <Send className="ml-2 h-5 w-5" />
               </Button>

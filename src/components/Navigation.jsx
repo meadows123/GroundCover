@@ -52,7 +52,7 @@ const Navigation = () => {
               ))}
               <Button 
                 onClick={openBookingModal}
-                className="bg-[#fedd55] hover:bg-[#fedd55] text-white font-semibold px-6"
+                className="bg-[#fedd55] hover:bg-[#fedd55] text-black font-semibold px-6"
               >
                 Book a Free Visit
                 <CalendarDays className="ml-2 h-4 w-4" />
@@ -93,7 +93,7 @@ const Navigation = () => {
                 ))}
                 <Button 
                   onClick={openBookingModal}
-                  className="bg-[#fedd55] hover:bg-[#fedd55] text-white font-semibold w-full"
+                  className="bg-[#fedd55] hover:bg-[#fedd55] text-black font-semibold w-full"
                 >
                   Book a Free Visit
                   <CalendarDays className="ml-2 h-4 w-4" />

@@ -135,7 +135,7 @@ const ContactForm = () => {
             {/* Contact Methods */}
             <div className="space-y-6">
               <div className="flex items-center gap-4 p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
-                <div className="w-14 h-14 bg-[#FFC107] rounded-xl flex items-center justify-center">
+                <div className="w-14 h-14 bg-[#fedd55] rounded-xl flex items-center justify-center">
                   <Phone className="w-7 h-7 text-white" />
                 </div>
                 <div>
@@ -146,7 +146,7 @@ const ContactForm = () => {
               </div>
 
               <div className="flex items-center gap-4 p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
-                <div className="w-14 h-14 bg-[#FFC107] rounded-xl flex items-center justify-center">
+                <div className="w-14 h-14 bg-[#fedd55] rounded-xl flex items-center justify-center">
                   <Mail className="w-7 h-7 text-white" />
                 </div>
                 <div>
@@ -157,7 +157,7 @@ const ContactForm = () => {
               </div>
 
               <div className="flex items-center gap-4 p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
-                <div className="w-14 h-14 bg-[#FFC107] rounded-xl flex items-center justify-center">
+                <div className="w-14 h-14 bg-[#fedd55] rounded-xl flex items-center justify-center">
                   <MapPin className="w-7 h-7 text-white" />
                 </div>
                 <div>
@@ -169,19 +169,19 @@ const ContactForm = () => {
             </div>
 
             {/* Why Choose Us */}
-            <div className="bg-[#FFC107]/10 rounded-2xl p-8">
+            <div className="bg-[#fedd55]/10 rounded-2xl p-8">
               <h3 className="text-2xl font-bold text-[#5B8B6B] mb-6">Why Choose GroundCover?</h3>
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-[#FFC107]" />
+                  <CheckCircle className="w-5 h-5 text-[#fedd55]" />
                   <span className="text-[#7A5E3A]">Free no-obligation consultations</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-[#FFC107]" />
+                  <Clock className="w-5 h-5 text-[#fedd55]" />
                   <span className="text-[#7A5E3A]">15+ years of experience</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Shield className="w-5 h-5 text-[#FFC107]" />
+                  <Shield className="w-5 h-5 text-[#fedd55]" />
                   <span className="text-[#7A5E3A]">Fully insured & guaranteed work</span>
                 </div>
               </div>
@@ -208,7 +208,7 @@ const ContactForm = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFC107] focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] focus:border-transparent transition-all duration-300"
                     placeholder="Enter your full name"
                   />
                 </div>
@@ -223,7 +223,7 @@ const ContactForm = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFC107] focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] focus:border-transparent transition-all duration-300"
                     placeholder="Your phone number"
                   />
                 </div>
@@ -239,7 +239,7 @@ const ContactForm = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFC107] focus:border-transparent transition-all duration-300"
+                  className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] focus:border-transparent transition-all duration-300"
                   placeholder="your.email@example.com"
                 />
               </div>
@@ -253,7 +253,7 @@ const ContactForm = () => {
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFC107] focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] focus:border-transparent transition-all duration-300"
                   >
                     <option value="">Select a service</option>
                     {services.map((service) => (
@@ -271,7 +271,7 @@ const ContactForm = () => {
                     name="location"
                     value={formData.location}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFC107] focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] focus:border-transparent transition-all duration-300"
                                           placeholder="e.g., Bristol, Bath"
                   />
                 </div>
@@ -286,7 +286,7 @@ const ContactForm = () => {
                     name="projectBudget"
                     value={formData.projectBudget}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFC107] focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] focus:border-transparent transition-all duration-300"
                   >
                     <option value="">Select budget range</option>
                     {budgetRanges.map((budget) => (
@@ -303,7 +303,7 @@ const ContactForm = () => {
                     name="timeline"
                     value={formData.timeline}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFC107] focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] focus:border-transparent transition-all duration-300"
                   >
                     <option value="">When do you need this?</option>
                     {timelines.map((timeline) => (
@@ -322,7 +322,7 @@ const ContactForm = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows={5}
-                  className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFC107] focus:border-transparent transition-all duration-300 resize-none"
+                  className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] focus:border-transparent transition-all duration-300 resize-none"
                   placeholder="Tell us about your project, garden size, specific requirements, or any questions you have..."
                 />
               </div>
@@ -330,7 +330,7 @@ const ContactForm = () => {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-[#FFC107] hover:bg-[#FFD700] text-white font-semibold py-4 text-lg rounded-xl shadow-xl transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-[#fedd55] hover:bg-[#fedd55] text-black font-semibold py-4 text-lg rounded-xl shadow-xl transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   <div className="flex items-center justify-center gap-3">
