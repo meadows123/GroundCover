@@ -312,7 +312,7 @@ const GalleryPage = () => {
             </div>
           </motion.div>
 
-          {/* Clean Photo Showcase with Dynamic Layout */}
+          {/* Artistic Photography Portfolio Layout */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -330,26 +330,60 @@ const GalleryPage = () => {
                 className="group relative break-inside-avoid mb-4 md:mb-6 cursor-pointer"
                 onClick={() => openLightbox(project)}
               >
-                <div className="relative overflow-hidden rounded-2xl md:rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
-                    loading="lazy"
-                    onError={(e) => {
-                      console.error('Failed to load image:', project.image);
-                      e.target.src = '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_5031.jpeg'; // Fallback image
-                    }}
-                  />
-                  
-                  {/* Simple hover overlay */}
-                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl md:rounded-3xl"></div>
-                  
-                  {/* Minimal eye icon on hover */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-                    <div className="w-12 h-12 md:w-16 md:h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center transform scale-75 group-hover:scale-100 transition-transform duration-300">
-                      <Eye className="w-6 h-6 md:w-8 md:h-8 text-white" />
+                {/* Artistic Photo Frame */}
+                <div className="relative bg-white p-2 md:p-3 rounded-xl md:rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_20px_60px_rgb(0,0,0,0.25)] transition-all duration-700 transform hover:-translate-y-3 hover:rotate-1 group-hover:scale-[1.02]">
+                  {/* Photo with artistic effects */}
+                  <div className="relative overflow-hidden rounded-lg md:rounded-xl">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-auto object-cover group-hover:scale-110 transition-all duration-1000 filter contrast-110 saturate-110 group-hover:saturate-125 group-hover:contrast-125"
+                      style={{
+                        filter: 'contrast(1.1) saturate(1.05) brightness(1.02) sepia(0.05)',
+                      }}
+                      loading="lazy"
+                      onError={(e) => {
+                        console.error('Failed to load image:', project.image);
+                        e.target.src = '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_5031.jpeg'; // Fallback image
+                      }}
+                    />
+                    
+                    {/* Film grain texture overlay */}
+                    <div 
+                      className="absolute inset-0 opacity-[0.03] mix-blend-overlay pointer-events-none"
+                      style={{
+                        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+                        backgroundSize: '180px 180px'
+                      }}
+                    />
+                    
+                    {/* Artistic hover overlay with gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-white/10 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                    
+                    {/* Sophisticated view indicator */}
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+                      <div className="relative">
+                        {/* Animated rings */}
+                        <div className="absolute inset-0 w-16 h-16 md:w-20 md:h-20 border-2 border-white/30 rounded-full animate-ping"></div>
+                        <div className="absolute inset-0 w-16 h-16 md:w-20 md:h-20 border border-white/50 rounded-full animate-pulse"></div>
+                        
+                        {/* Center icon */}
+                        <div className="relative w-16 h-16 md:w-20 md:h-20 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center transform scale-75 group-hover:scale-100 transition-all duration-500">
+                          <Eye className="w-6 h-6 md:w-8 md:h-8 text-white drop-shadow-lg" />
+                        </div>
+                      </div>
                     </div>
+                    
+                    {/* Corner artistic elements */}
+                    <div className="absolute top-2 left-2 w-4 h-4 border-l-2 border-t-2 border-white/40 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                    <div className="absolute top-2 right-2 w-4 h-4 border-r-2 border-t-2 border-white/40 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                    <div className="absolute bottom-2 left-2 w-4 h-4 border-l-2 border-b-2 border-white/40 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                    <div className="absolute bottom-2 right-2 w-4 h-4 border-r-2 border-b-2 border-white/40 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                  </div>
+                  
+                  {/* Vintage photo label effect */}
+                  <div className="absolute -bottom-1 -right-1 w-6 h-6 md:w-8 md:h-8 bg-gradient-to-br from-amber-100 to-amber-200 rounded-full shadow-lg opacity-0 group-hover:opacity-90 transition-all duration-300 flex items-center justify-center">
+                    <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
                   </div>
                 </div>
               </motion.div>
