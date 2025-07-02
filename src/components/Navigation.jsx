@@ -26,15 +26,14 @@ const Navigation = () => {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#5B8B6B]/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <Link to="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 rounded-lg overflow-hidden">
+            <Link to="/" className="flex items-center">
+              <div className="h-12 w-auto">
                 <img 
-                  src="/images/wetransfer_img_6702-jpeg_2025-07-01_0636/GroundCover-Trans.png" 
+                  src="/images/wetransfer_img_6702-jpeg_2025-07-01_0636/GroundCover-Trans-big.png" 
                   alt="GroundCover Logo" 
-                  className="w-full h-full object-contain"
+                  className="h-full w-auto object-contain"
                 />
               </div>
-              <span className="text-xl font-bold gradient-text">GroundCover</span>
             </Link>
 
             <div className="hidden md:flex items-center space-x-8">
