@@ -27,9 +27,9 @@ const Navigation = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link to="/" className="flex items-center">
-              <div className="h-12 w-auto">
+              <div className="h-14 w-auto">
                 <img 
-                  src="/images/wetransfer_img_6702-jpeg_2025-07-01_0636/GroundCover-Trans-big.png" 
+                  src="/images/wetransfer_img_6702-jpeg_2025-07-01_0636/GroundCover-Trans-bigger.png" 
                   alt="GroundCover Logo" 
                   className="h-full w-auto object-contain"
                 />
