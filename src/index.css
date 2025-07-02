@@ -1,0 +1,403 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 255 255 255; /* Clean white background */
+    --foreground: 91 139 107; /* Leafy green primary */
+    
+    --card: 255 255 255; /* Clean white */
+    --card-foreground: 91 139 107; /* Leafy green primary */
+    
+    --popover: 255 255 255; /* Clean white */
+    --popover-foreground: 91 139 107; /* Leafy green primary */
+    
+    --primary: 91 139 107; /* Leafy green primary */
+    --primary-foreground: 255 255 255; /* Clean white */
+    
+    --secondary: 122 94 58; /* Warm earth brown secondary */
+    --secondary-foreground: 255 255 255; /* Clean white */
+    
+    --muted: 236 236 236; /* Stone neutral background */
+    --muted-foreground: 122 94 58; /* Warm earth brown */
+    
+    --accent: 255 193 7; /* Bright mustard yellow accent */
+    --accent-foreground: 255 255 255; /* White text for mustard yellow buttons */
+    
+    --destructive: 239 68 68; /* Red for errors */
+    --destructive-foreground: 255 255 255; /* Clean white for destructive text */
+    
+    --border: 236 236 236; /* Stone neutral border */
+    --input: 236 236 236; /* Stone neutral input border */
+    --ring: 91 139 107; /* Leafy green focus ring */
+
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-['Inter'] antialiased;
+    line-height: 1.6;
+  }
+}
+
+/* Modern Professional Styles */
+.hero-overlay {
+  background: linear-gradient(135deg, rgba(91, 139, 107, 0.9) 0%, rgba(122, 94, 58, 0.8) 50%, rgba(91, 139, 107, 0.9) 100%);
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.text-shadow {
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.gradient-text {
+  color: #FFC107;
+}
+
+/* Modern shadows and effects */
+.shadow-3xl {
+  box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25), 0 10px 20px -5px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-modern {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.shadow-luxury {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 8px 16px -4px rgba(0, 0, 0, 0.1);
+}
+
+/* Professional button effects */
+.btn-luxury {
+  background: linear-gradient(135deg, #5B8B6B 0%, #7A5E3A 100%);
+  box-shadow: 0 10px 25px rgba(91, 139, 107, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-luxury:hover {
+  background: #FFC107;
+  color: #FFFFFF;
+  box-shadow: 0 15px 35px rgba(255, 193, 7, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Modern card styles */
+.card-modern {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-modern:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 35px 60px rgba(0, 0, 0, 0.15);
+  border-color: rgba(91, 139, 107, 0.2);
+}
+
+/* Professional portfolio grid */
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(91, 139, 107, 0.1) 0%, rgba(122, 94, 58, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.portfolio-item:hover::before {
+  opacity: 1;
+}
+
+.portfolio-item img {
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: contrast(1.1) saturate(1.1);
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.08);
+}
+
+/* Professional gradients */
+.bg-professional {
+  background: linear-gradient(135deg, #FFFFFF 0%, #ECECEC 100%);
+}
+
+.bg-dark-professional {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+}
+
+.bg-emerald-gradient {
+  background: #FFC107;
+}
+
+/* Luxury text effects */
+.text-luxury {
+  background: linear-gradient(135deg, #FFFFFF 0%, #ECECEC 50%, #FFFFFF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Modern animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.8s ease-out;
+}
+
+/* Professional spacing and typography */
+.section-spacing {
+  padding: 6rem 0;
+}
+
+@media (max-width: 768px) {
+  .section-spacing {
+    padding: 3rem 0;
+  }
+}
+
+.heading-primary {
+  font-size: clamp(2.5rem, 6vw, 6rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.heading-secondary {
+  font-size: clamp(2rem, 4vw, 4rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.text-professional {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: rgb(100 116 139);
+}
+
+/* Legacy styles for backward compatibility */
+.slider-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.lightbox-overlay {
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(8px);
+}
+
+.masonry-grid {
+  column-count: 3;
+  column-gap: 1.5rem;
+  break-inside: avoid;
+}
+
+@media (max-width: 768px) {
+  .masonry-grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .masonry-grid {
+    column-count: 1;
+  }
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+}
+
+.filter-button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.filter-button.active {
+  background: #FFC107;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 193, 7, 0.3);
+}
+
+.project-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.before-after-slider {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.before-after-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+
+.before-image, .after-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.after-image {
+  clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%);
+  transition: clip-path 0.3s ease;
+}
+
+.slider-handle {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background: #5B8B6B;
+  cursor: ew-resize;
+  z-index: 10;
+  transform: translateX(-50%);
+}
+
+.slider-handle::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  background: #5B8B6B;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 4px 12px rgba(91, 139, 107, 0.4);
+}
+
+.slider-handle::after {
+  content: '⟷';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* React Day Picker Modern Styles */
+.rdp {
+  --rdp-cell-size: 44px;
+  --rdp-accent-color: #FFC107; /* Bright Mustard Yellow */
+  --rdp-background-color: #FFC107; /* Bright Mustard Yellow for selected */
+  --rdp-accent-color-dark: #5B8B6B; /* Leafy Green */
+  --rdp-background-color-dark: #5B8B6B; /* Leafy Green */
+  margin: 1.5em 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.rdp-day_selected, .rdp-day_selected:focus-visible, .rdp-day_selected:hover {
+  background-color: #FFC107;
+  color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3);
+}
+
+.rdp-button:hover:not([disabled]):not(.rdp-day_selected) {
+  background-color: rgba(255, 193, 7, 0.1);
+  border-radius: 0.5rem;
+}
+
+.rdp-button:focus-visible:not([disabled]):not(.rdp-day_selected) {
+  background-color: rgba(255, 193, 7, 0.1);
+  border-radius: 0.5rem;
+  outline: 2px solid #FFC107;
+}
+
+.rdp-day_today {
+  font-weight: 600;
+  color: #FFC107;
+}
+
+.rdp-caption_label {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.rdp-head_cell {
+  font-weight: 500;
+  color: #64748b;
+}
+
+.rdp-nav_button {
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.rdp-nav_button:hover {
+  background-color: rgba(255, 193, 7, 0.1);
+}
