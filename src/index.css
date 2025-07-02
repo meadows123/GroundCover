@@ -89,7 +89,7 @@
 
 .btn-luxury:hover {
   background: #fedd55;
-  color: #FFFFFF;
+  color: #000000;
   box-shadow: 0 15px 35px rgba(254, 221, 85, 0.4);
   transform: translateY(-2px);
 }
