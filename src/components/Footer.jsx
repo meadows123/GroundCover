@@ -42,6 +42,10 @@ const Footer = () => {
                 <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" />
                 <span>About Us</span>
               </Link>
+              <Link to="/survey" className="flex items-center gap-2 text-gray-600 hover:text-[#E1B941] transition-colors duration-300 group">
+                <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" />
+                <span>Customer Survey</span>
+              </Link>
               <a href="tel:+447510359770" className="flex items-center gap-2 text-[#E1B941] hover:text-[#FFD700] transition-colors duration-300 group font-medium">
                 <Calendar className="w-4 h-4" />
                 <span>Free Consultation</span>
