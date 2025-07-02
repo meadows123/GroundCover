@@ -12,9 +12,9 @@ const Footer = () => {
             <div className="flex items-center space-x-3">
               <div className="w-12 h-12 rounded-2xl overflow-hidden">
                 <img 
-                  src="/images/wetransfer_img_6702-jpeg_2025-07-01_0636/GC logo  .jpg" 
+                  src="/images/wetransfer_img_6702-jpeg_2025-07-01_0636/GroundCover-Trans.png" 
                   alt="GroundCover Logo" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
               </div>
               <span className="text-2xl font-bold text-[#E1B941]">
