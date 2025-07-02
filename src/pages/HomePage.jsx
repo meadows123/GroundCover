@@ -38,8 +38,8 @@ const HomePage = () => {
     },
     {
       image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_5223.jpeg',
-      title: 'Driveway Solutions',
-      description: 'High-end surface installations'
+      title: 'Premium Driveways & Pathways',
+      description: 'Stunning entrance solutions and walkways'
     },
     {
       image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_1183.jpeg',
