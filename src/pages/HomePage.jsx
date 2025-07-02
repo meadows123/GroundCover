@@ -4,7 +4,6 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, CheckCircle, Star, Users, Calendar, Award, CalendarDays, Phone, Mail, MapPin, Leaf, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { BookingModal } from '@/components/BookingModal';
-import TestimonialsSection from '@/components/TestimonialsSection';
 
 const HomePage = () => {
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
@@ -46,6 +45,40 @@ const HomePage = () => {
       image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_1183.jpeg',
       title: 'Outdoor Living Spaces',
       description: 'Creating beautiful functional areas'
+    }
+  ];
+
+  // Real Google Reviews from customers
+  const googleReviews = [
+    {
+      id: 1,
+      name: 'Shaun Lewis',
+      location: 'Google Reviews',
+      rating: 5,
+      date: 'A year ago',
+      text: 'Very friendly service. All work was completed at a high quality. The team are perfectionists.',
+      verified: true,
+      reviewCount: '1 review • 21 photos'
+    },
+    {
+      id: 2,
+      name: 'James Graley',
+      location: 'Google Reviews',
+      rating: 5,
+      date: 'A year ago',
+      text: 'Great service highly recommended!',
+      verified: true,
+      reviewCount: '3 reviews'
+    },
+    {
+      id: 3,
+      name: 'Ying Yin',
+      location: 'Google Reviews',
+      rating: 5,
+      date: '9 months ago',
+      text: 'Two trust-worthy and good-looking fellas saving a completely over-grown garden neglected by the tenants, showing care and respect to the plants. What more can you ask for?',
+      verified: true,
+      reviewCount: '25 reviews • 20 photos'
     }
   ];
 
@@ -206,8 +239,105 @@ const HomePage = () => {
           </div>
         </section>
 
-        {/* Customer Testimonials & Feedback Section */}
-        <TestimonialsSection />
+        {/* Google Reviews Section */}
+        <section className="py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-20"
+            >
+              <div className="inline-flex items-center gap-2 bg-[#E1B941]/10 rounded-full px-6 py-3 mb-6">
+                <Star className="w-5 h-5 text-[#E1B941] fill-current" />
+                <span className="text-sm font-medium text-[#5B8B6B]">5-Star Google Reviews</span>
+              </div>
+              <h2 className="text-5xl md:text-6xl font-bold text-[#5B8B6B] mb-6">
+                What Our Customers Say
+              </h2>
+              <p className="text-xl text-[#7A5E3A] max-w-3xl mx-auto leading-relaxed">
+                Don't just take our word for it - see what our satisfied customers have to say about our work
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {googleReviews.map((review, index) => (
+                <motion.div
+                  key={review.id}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-white rounded-3xl p-8 shadow-luxury hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100"
+                >
+                  {/* Google branding */}
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="flex items-center gap-2">
+                      <div className="w-8 h-8 rounded-lg flex items-center justify-center">
+                        <svg viewBox="0 0 24 24" className="w-6 h-6">
+                          <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                          <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                          <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                          <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                        </svg>
+                      </div>
+                      <span className="text-sm font-medium text-gray-600">Google</span>
+                    </div>
+                    {review.verified && (
+                      <div className="flex items-center gap-1 text-xs text-[#5B8B6B] font-medium">
+                        <CheckCircle className="w-3 h-3 fill-current" />
+                        Verified
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Star rating */}
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(review.rating)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 text-[#E1B941] fill-current" />
+                    ))}
+                  </div>
+
+                  {/* Review text */}
+                  <p className="text-[#7A5E3A] leading-relaxed mb-6 line-clamp-4">
+                    "{review.text}"
+                  </p>
+
+                  {/* Customer info */}
+                  <div className="border-t border-gray-100 pt-4">
+                    <div className="font-semibold text-[#5B8B6B] mb-1">{review.name}</div>
+                    <div className="text-xs text-gray-500 mb-1">{review.reviewCount}</div>
+                    <div className="text-sm text-gray-500">{review.date}</div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Google Reviews CTA */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="text-center mt-16"
+            >
+              <a 
+                href="https://www.google.com/search?q=groundcover+bristol&sca_esv=32f9ae821a1b1a5d&sxsrf=AE3TifP0MjA91bRXZ2aYPE1Zx_V-9W8nZA%3A1751355649753&ei=AZFjaP_dLe-khbIPtr22-Qs&ved=0ahUKEwi_4oOblJuOAxVvUkEAHbaeLb8Q4dUDCBA&uact=5&oq=groundcover+bristol&gs_lp=Egxnd3Mtd2l6LXNlcnAaAhgCIhNncm91bmRjb3ZlciBicmlzdG9sMgQQIxgnMgcQABiABBgNMgsQABiABBiGAxiKBTILEAAYgAQYhgMYigUyCxAAGIAEGIYDGIoFMgsQABiABBiGAxiKBTILEAAYgAQYhgMYigUyCBAAGKIEGIkFMggQABiiBBiJBTIIEAAYogQYiQVI3xJQsgRYoBBwAXgBkAEDmAHNAqABhQuqAQczLjAuMi4yuAEDyAEA-AEBmAIFoALLBMICBxAjGLADGCfCAgoQABiwAxjWBBhHwgINEAAYgAQYsAMYQxiKBcICChAAGIAEGEMYigXCAgoQABiABBgUGIcCwgIFEAAYgATCAggQABiABBiLA8ICChAuGIAEGBQYhwLCAgYQABgWGB6YAwCIBgGQBgqSBwUyLjIuMaAHzT2yBwUxLjIuMbgHrwTCBwUzLTMuMsgHUw&sclient=gws-wiz-serp#lrd=0x6fd7861ade6d7c0f:0x55fb7ba8bd4ced45,1,,,,"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 bg-[#E1B941] text-white px-8 py-4 rounded-2xl font-semibold hover:bg-[#FFD700] transition-colors duration-300 cursor-pointer"
+              >
+                <Star className="w-5 h-5 fill-current" />
+                <span>Read All Reviews on Google</span>
+                <ArrowRight className="w-5 h-5" />
+              </a>
+              <p className="text-sm text-gray-500 mt-3">
+                Read all our genuine 5-star Google reviews
+              </p>
+            </motion.div>
+          </div>
+        </section>
 
         {/* Features Section */}
         <section className="py-24 bg-gradient-to-br from-[#5B8B6B] to-[#7A5E3A]">
