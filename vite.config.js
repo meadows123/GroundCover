@@ -1,6 +1,10 @@
 import path from 'node:path';
 import react from '@vitejs/plugin-react';
 import { createLogger, defineConfig } from 'vite';
+import { parse } from '@babel/parser';
+import traverseBabel from '@babel/traverse';
+import generate from '@babel/generator';
+import * as t from '@babel/types';
 
 const isDev = process.env.NODE_ENV !== 'production';
 let inlineEditPlugin, editModeDevPlugin;
@@ -210,6 +214,7 @@ export default defineConfig({
 		},
 	},
 	build: {
+		outDir: 'build',
 		rollupOptions: {
 			external: [
 				'@babel/parser',
