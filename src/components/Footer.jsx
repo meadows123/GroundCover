@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Mail, MapPin, Facebook, Instagram, Leaf, ArrowRight, Calendar, Award } from 'lucide-react';
+import { Phone, Mail, MapPin, Facebook, Instagram, ArrowRight, Calendar, Award } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -10,8 +10,12 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-[#E1B941] rounded-2xl flex items-center justify-center">
-                <Leaf className="w-7 h-7 text-white" />
+              <div className="w-12 h-12 rounded-2xl overflow-hidden">
+                <img 
+                  src="/images/wetransfer_img_6702-jpeg_2025-07-01_0636/GC logo  .jpg" 
+                  alt="GroundCover Logo" 
+                  className="w-full h-full object-cover"
+                />
               </div>
               <span className="text-2xl font-bold text-[#E1B941]">
                 GroundCover

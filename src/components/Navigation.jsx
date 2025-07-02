@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Menu, X, Leaf, CalendarDays } from 'lucide-react';
+import { Menu, X, CalendarDays } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { BookingModal } from '@/components/BookingModal';
 
@@ -27,8 +27,12 @@ const Navigation = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link to="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-[#FFC107] rounded-lg flex items-center justify-center">
-                <Leaf className="w-6 h-6 text-white" />
+              <div className="w-10 h-10 rounded-lg overflow-hidden">
+                <img 
+                  src="/images/wetransfer_img_6702-jpeg_2025-07-01_0636/GC logo  .jpg" 
+                  alt="GroundCover Logo" 
+                  className="w-full h-full object-cover"
+                />
               </div>
               <span className="text-xl font-bold gradient-text">GroundCover</span>
             </Link>
