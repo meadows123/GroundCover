@@ -23,13 +23,13 @@ const AboutPage = () => {
       name: 'Jack Fleming',
       role: 'Director',
       description: 'With over 20 years of experience, Jack brings unparalleled expertise to every landscape transformation.',
-      image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/Jack.jpg',
+      image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/Jack-1.jpg',
     },
     {
       name: 'David Jones',
       role: 'Director',
       description: 'David combines artistic vision with technical expertise to create stunning outdoor environments.',
-      image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/Dave.jpg',
+      image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/dave-1.jpg',
     },
     {
       name: 'Team Member',
@@ -309,8 +309,8 @@ const AboutPage = () => {
               {/* Contact Methods */}
               <div className="space-y-6">
                 <div className="flex items-center gap-4 p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
-                  <div className="w-14 h-14 bg-gradient-to-br from-[#5B8B6B] to-[#7A5E3A] rounded-xl flex items-center justify-center">
-                    <Phone className="w-7 h-7 text-[#fedd55]" />
+                  <div className="w-14 h-14 bg-gradient-to-br from-[#5B8B6B] to-[#7A5E3A] rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-7 h-7 text-[#fedd55] flex-shrink-0" />
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-[#5B8B6B] mb-1">Call Us</h4>
@@ -320,8 +320,8 @@ const AboutPage = () => {
                 </div>
 
                 <div className="flex items-center gap-4 p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
-                  <div className="w-14 h-14 bg-gradient-to-br from-[#5B8B6B] to-[#7A5E3A] rounded-xl flex items-center justify-center">
-                    <Mail className="w-7 h-7 text-[#fedd55]" />
+                  <div className="w-14 h-14 bg-gradient-to-br from-[#5B8B6B] to-[#7A5E3A] rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-7 h-7 text-[#fedd55] flex-shrink-0" />
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-[#5B8B6B] mb-1">Email Us</h4>
@@ -331,8 +331,8 @@ const AboutPage = () => {
                 </div>
 
                 <div className="flex items-center gap-4 p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
-                  <div className="w-14 h-14 bg-gradient-to-br from-[#5B8B6B] to-[#7A5E3A] rounded-xl flex items-center justify-center">
-                    <MapPin className="w-7 h-7 text-[#fedd55]" />
+                  <div className="w-14 h-14 bg-gradient-to-br from-[#5B8B6B] to-[#7A5E3A] rounded-xl flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-7 h-7 text-[#fedd55] flex-shrink-0" />
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-[#5B8B6B] mb-1">Service Area</h4>

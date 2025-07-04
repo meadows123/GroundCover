@@ -1,202 +1,116 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { X, ChevronLeft, ChevronRight, Eye, ArrowRight, Sparkles, Leaf } from 'lucide-react';
+import { Users, MapPin, Sun, Leaf, Award, CheckCircle, Phone, Mail, Send, Sparkles, Clock, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import BeforeAfterSlider from '@/components/BeforeAfterSlider';
-import { BookingModal } from '@/components/BookingModal';
+import { useToast } from '@/components/ui/use-toast';
 
-const GalleryPage = () => {
-  const [selectedImage, setSelectedImage] = useState(null);
-  const [activeFilter, setActiveFilter] = useState('All');
-  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+const AboutPage = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    service: '',
+    location: '',
+    message: '',
+    projectBudget: '',
+    timeline: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
-  const filters = ['All', 'Garden Design', 'Patios & Driveways', 'Landscape Architecture', 'Maintenance', 'Commercial'];
-
-  const portfolioProjects = [
+  const teamMembers = [
     {
-      id: 1,
-      category: 'Garden Design',
-      image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_5031.jpeg',
-      title: 'Luxury Contemporary Garden',
-      description: 'Complete garden transformation with modern design elements and premium materials',
-      location: 'Bristol'
+      name: 'Jack Fleming',
+      role: 'Director',
+      description: 'With over 20 years of experience, Jack brings unparalleled expertise to every landscape transformation.',
+      image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/Jack-1.jpg',
     },
     {
-      id: 2,
-      category: 'Patios & Driveways',
-      image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_2755.jpeg',
-      title: 'Premium Patio Installation',
-      description: 'High-end natural stone patio with integrated outdoor living space',
-      location: 'Bath'
+      name: 'David Jones',
+      role: 'Director',
+      description: 'David combines artistic vision with technical expertise to create stunning outdoor environments.',
+      image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/dave-1.jpg',
     },
     {
-      id: 3,
-      category: 'Landscape Architecture',
+      name: 'Team Member',
+      role: 'Director',
+      description: 'Our third team member ensures every project exceeds expectations through meticulous planning and execution.',
       image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_1325.jpeg',
-      title: 'Architectural Landscape Design',
-      description: 'Sophisticated landscaping with structured plantings and modern features',
-      location: 'Gloucester'
     },
-    {
-      id: 4,
-      category: 'Garden Design',
-      image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_0775.jpeg',
-      title: 'Elegant Garden Renovation',
-      description: 'Traditional garden updated with contemporary design principles',
-      location: 'Cheltenham'
-    },
-    {
-      id: 5,
-      category: 'Patios & Driveways',
-      image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_5223.jpeg',
-      title: 'Executive Driveway Project',
-      description: 'Premium block paving with decorative borders and lighting integration',
-      location: 'Swindon'
-    },
-    {
-      id: 6,
-      category: 'Maintenance',
-      image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_1183.jpeg',
-      title: 'Garden Maintenance Excellence',
-      description: 'Ongoing professional maintenance showcasing pristine results',
-      location: 'Bristol'
-    },
-    {
-      id: 7,
-      category: 'Landscape Architecture',
-      image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_0487.jpeg',
-      title: 'Structural Landscaping',
-      description: 'Bold architectural elements combined with natural beauty',
-      location: 'Exeter'
-    },
-    {
-      id: 8,
-      category: 'Garden Design',
-      image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_0924.jpeg',
-      title: 'Naturalistic Garden Design',
-      description: 'Organic design approach with native plantings and natural materials',
-      location: 'Taunton'
-    },
-    {
-      id: 9,
-      category: 'Commercial',
-      image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_0498.jpeg',
-      title: 'Commercial Landscape Project',
-      description: 'Large-scale commercial landscaping with sustainable design',
-      location: 'Bristol City Centre'
-    },
-    {
-      id: 10,
-      category: 'Patios & Driveways',
-      image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_0497.jpeg',
-      title: 'Multi-Level Patio Design',
-      description: 'Complex terraced patio with retaining walls and integrated seating',
-      location: 'Yeovil'
-    },
-    {
-      id: 11,
-      category: 'Garden Design',
-      image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_2860.jpeg',
-      title: 'Family Garden Transformation',
-      description: 'Functional yet beautiful family garden with play areas and relaxation zones',
-      location: 'Bridgwater'
-    },
-    {
-      id: 12,
-      category: 'Landscape Architecture',
-      image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_7434.jpeg',
-      title: 'Contemporary Landscape Design',
-      description: 'Cutting-edge design with innovative materials and techniques',
-      location: 'Plymouth'
-    },
-    {
-      id: 13,
-      category: 'Maintenance',
-      image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_5746.jpeg',
-      title: 'Estate Garden Maintenance',
-      description: 'Premium maintenance service for large estate gardens',
-      location: 'Weston-super-Mare'
-    },
-    {
-      id: 14,
-      category: 'Garden Design',
-      image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_7853.jpeg',
-      title: 'Boutique Garden Design',
-      description: 'Intimate garden space maximized for beauty and functionality',
-      location: 'Clevedon'
-    },
-    {
-      id: 15,
-      category: 'Patios & Driveways',
-      image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_7261.jpeg',
-      title: 'Luxury Outdoor Living Space',
-      description: 'Premium outdoor entertainment area with kitchen and dining facilities',
-      location: 'Portishead'
-    },
-    {
-      id: 16,
-      category: 'Commercial',
-      image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_6702.jpeg',
-      title: 'Corporate Headquarters Landscaping',
-      description: 'Professional corporate landscaping with year-round interest',
-      location: 'Bristol Business Park'
-    }
   ];
 
-  const featuredProjects = [
-    {
-      id: 1,
-      title: 'Award-Winning Garden Transformation',
-      beforeImage: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_0386.jpeg',
-      afterImage: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_5536.jpeg',
-      description: 'Complete transformation of a neglected urban garden into a contemporary outdoor sanctuary'
-    },
-    {
-      id: 2,
-      title: 'Executive Patio & Landscape Design',
-      beforeImage: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_4461.jpeg',
-      afterImage: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_0931.jpeg',
-      description: 'Premium materials and expert craftsmanship create an exceptional outdoor living space'
-    },
-    {
-      id: 3,
-      title: 'Modern Family Garden',
-      beforeImage: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_2772.jpeg',
-      afterImage: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_5165.jpeg',
-      description: 'Functional family space combining play areas with sophisticated design elements'
-    }
+  const values = [
+    { icon: Sparkles, title: 'Premium Quality', description: 'We use only the finest materials and proven techniques for lasting results.' },
+    { icon: Users, title: 'Client Partnership', description: 'Your vision guides every decision we make throughout the project.' },
+    { icon: CheckCircle, title: 'Guaranteed Excellence', description: 'We stand behind our work with comprehensive warranties and support.' },
+    { icon: Leaf, title: 'Sustainable Design', description: 'Eco-friendly practices that create beautiful, environmentally responsible landscapes.' },
   ];
 
-  const filteredImages = activeFilter === 'All' 
-    ? portfolioProjects 
-    : portfolioProjects.filter(project => project.category === activeFilter);
+  const services = [
+    'Garden Design & Landscaping',
+    'Patio & Driveway Installation',
+    'Garden Maintenance',
+    'Lawn Care & Treatment',
+    'Tree Surgery & Pruning',
+    'Fencing & Decking',
+    'Commercial Landscaping',
+    'Other / Not Sure'
+  ];
 
-  const openLightbox = (project) => {
-    setSelectedImage(project);
+  const budgetRanges = [
+    'Under £1,000',
+    '£1,000 - £5,000',
+    '£5,000 - £15,000',
+    '£15,000 - £30,000',
+    '£30,000+',
+    'Prefer to discuss'
+  ];
+
+  const timelines = [
+    'As soon as possible',
+    'Within 1 month',
+    '1-3 months',
+    '3-6 months',
+    '6+ months',
+    'Flexible timing'
+  ];
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    // Simulate form submission
+    setTimeout(() => {
+      setIsSubmitting(false);
+      toast({
+        title: "Message sent successfully!",
+        description: "We'll get back to you within 24 hours to discuss your project.",
+      });
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        service: '',
+        location: '',
+        message: '',
+        projectBudget: '',
+        timeline: ''
+      });
+    }, 2000);
   };
 
-  const closeLightbox = () => {
-    setSelectedImage(null);
-  };
-
-  const navigateImage = (direction) => {
-    const currentIndex = filteredImages.findIndex(project => project.id === selectedImage.id);
-    let newIndex;
-    
-    if (direction === 'next') {
-      newIndex = currentIndex === filteredImages.length - 1 ? 0 : currentIndex + 1;
-    } else {
-      newIndex = currentIndex === 0 ? filteredImages.length - 1 : currentIndex - 1;
-    }
-    
-    setSelectedImage(filteredImages[newIndex]);
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
   };
 
   return (
     <div className="pt-16 min-h-screen bg-gradient-to-br from-gray-50 to-white">
       {/* Hero Header */}
       <section className="relative py-32 bg-gradient-to-br from-[#5B8B6B] via-[#7A5E3A] to-[#5B8B6B] text-white overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_1187.jpeg')] bg-cover bg-center opacity-20"></div>
+                    <div className="absolute inset-0 bg-[url('/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_0625.jpeg')] bg-cover bg-center opacity-20"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -205,8 +119,8 @@ const GalleryPage = () => {
             className="mb-8"
           >
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-6">
-                              <Sparkles className="w-5 h-5 text-[#fedd55]" />
-              <span className="text-sm font-medium">Premium Portfolio</span>
+              <Users className="w-5 h-5 text-[#fedd55]" />
+              <span className="text-sm font-medium">About Our Company</span>
             </div>
           </motion.div>
 
@@ -214,10 +128,10 @@ const GalleryPage = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-            className="text-6xl md:text-8xl font-bold mb-8 leading-tight"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-8 leading-tight"
           >
             <span className="text-[#fedd55]">
-              Our Work
+              About GroundCover
             </span>
           </motion.h1>
           
@@ -227,57 +141,67 @@ const GalleryPage = () => {
             transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
             className="text-xl md:text-2xl mb-12 text-gray-200 font-light max-w-4xl mx-auto leading-relaxed"
           >
-            Explore our portfolio of stunning landscape transformations
+            Your trusted partner in creating exceptional outdoor environments across Bristol and the South West
           </motion.p>
         </div>
       </section>
 
-      {/* Featured Before & After Projects */}
+      {/* Our Story Section */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-20"
-          >
-            <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent mb-6">
-              Transformation Stories
-            </h2>
-            <p className="text-xl text-[#7A5E3A] max-w-3xl mx-auto leading-relaxed">
-              Witness the remarkable transformations that showcase our expertise and vision
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {featuredProjects.map((project, index) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                className="group bg-white rounded-3xl shadow-luxury overflow-hidden hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2"
-              >
-                <div className="relative">
-                  <BeforeAfterSlider
-                    beforeImage={project.beforeImage}
-                    afterImage={project.afterImage}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#5B8B6B]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-5xl font-bold text-[#5B8B6B] mb-8">Our Story</h2>
+              <div className="space-y-6 text-lg text-[#7A5E3A] leading-relaxed">
+                <p>
+                  Founded in 2008, GroundCover began with a simple but powerful vision: to transform ordinary outdoor spaces into extraordinary landscapes that enhance both property value and quality of life.
+                </p>
+                <p>
+                  What started as a small team of passionate landscape professionals has evolved into the South West's premier landscaping company, known for our innovative designs, meticulous craftsmanship, and unwavering commitment to client satisfaction.
+                </p>
+                <p>
+                  We believe that exceptional outdoor spaces should be accessible to everyone, which is why we offer comprehensive services from intimate garden makeovers to large-scale commercial projects, all delivered with the same attention to detail and professional excellence.
+                </p>
+              </div>
+              <div className="mt-8 grid grid-cols-3 gap-6">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-[#5B8B6B]">500+</div>
+                  <div className="text-sm text-gray-500">Projects Completed</div>
                 </div>
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold text-[#5B8B6B] mb-3">{project.title}</h3>
-                  <p className="text-[#7A5E3A] leading-relaxed">{project.description}</p>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-[#5B8B6B]">15+</div>
+                  <div className="text-sm text-gray-500">Years Experience</div>
                 </div>
-              </motion.div>
-            ))}
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-[#5B8B6B]">98%</div>
+                  <div className="text-sm text-gray-500">Client Satisfaction</div>
+                </div>
+              </div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="rounded-3xl overflow-hidden shadow-2xl"
+            >
+              <img 
+                className="w-full h-auto object-cover"
+                alt="GroundCover team working on a beautiful landscape project"
+                src="/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_1011.jpg"
+                loading="lazy"
+              />
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Portfolio Gallery */}
+      {/* Our Values Section */}
       <section className="py-24 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -287,189 +211,324 @@ const GalleryPage = () => {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent mb-6">
-              Portfolio Gallery
+            <h2 className="text-5xl md:text-6xl font-bold text-[#5B8B6B] mb-6">
+              Our Values
             </h2>
-            <p className="text-xl text-[#7A5E3A] max-w-3xl mx-auto leading-relaxed mb-12">
-              Discover our complete collection of landscape projects
+            <p className="text-xl text-[#7A5E3A] max-w-3xl mx-auto leading-relaxed">
+              The principles that guide every project and relationship we build
             </p>
-
-            {/* Modern Filter Buttons */}
-            <div className="flex flex-wrap justify-center gap-3">
-              {filters.map((filter) => (
-                <button
-                  key={filter}
-                  onClick={() => setActiveFilter(filter)}
-                  className={`px-8 py-4 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 ${
-                    activeFilter === filter
-                      ? 'bg-[#5B8B6B] text-white shadow-xl'
-                      : 'bg-white text-[#5B8B6B] hover:bg-gray-50 border border-gray-200 shadow-lg'
-                  }`}
-                >
-                  {filter}
-                </button>
-              ))}
-            </div>
           </motion.div>
-
-          {/* Artistic Photography Portfolio Layout */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="columns-2 md:columns-3 lg:columns-4 xl:columns-5 gap-4 md:gap-6 space-y-4 md:space-y-6"
-          >
-            {filteredImages.map((project, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {values.map((value, index) => (
               <motion.div
-                key={project.id}
+                key={value.title}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.05 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="group relative break-inside-avoid mb-4 md:mb-6 cursor-pointer"
-                onClick={() => openLightbox(project)}
+                className="text-center p-8 rounded-3xl bg-white shadow-luxury hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2"
               >
-                {/* Artistic Photo Frame */}
-                <div className="relative bg-white p-2 md:p-3 rounded-xl md:rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_20px_60px_rgb(0,0,0,0.25)] transition-all duration-700 transform hover:-translate-y-3 hover:rotate-1 group-hover:scale-[1.02]">
-                  {/* Photo with artistic effects */}
-                  <div className="relative overflow-hidden rounded-lg md:rounded-xl">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-auto object-cover group-hover:scale-110 transition-all duration-1000 filter contrast-110 saturate-110 group-hover:saturate-125 group-hover:contrast-125"
-                      style={{
-                        filter: 'contrast(1.1) saturate(1.05) brightness(1.02) sepia(0.05)',
-                      }}
-                      loading="lazy"
-                      onError={(e) => {
-                        console.error('Failed to load image:', project.image);
-                        e.target.src = '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_5031.jpeg'; // Fallback image
-                      }}
-                    />
-                    
-                    {/* Film grain texture overlay */}
-                    <div 
-                      className="absolute inset-0 opacity-[0.03] mix-blend-overlay pointer-events-none"
-                      style={{
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-                        backgroundSize: '180px 180px'
-                      }}
-                    />
-                    
-                    {/* Artistic hover overlay with gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-white/10 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                    
-                    {/* Sophisticated view indicator */}
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
-                      <div className="relative">
-                        {/* Animated rings */}
-                        <div className="absolute inset-0 w-16 h-16 md:w-20 md:h-20 border-2 border-white/30 rounded-full animate-ping"></div>
-                        <div className="absolute inset-0 w-16 h-16 md:w-20 md:h-20 border border-white/50 rounded-full animate-pulse"></div>
-                        
-                        {/* Center icon */}
-                        <div className="relative w-16 h-16 md:w-20 md:h-20 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center transform scale-75 group-hover:scale-100 transition-all duration-500">
-                          <Eye className="w-6 h-6 md:w-8 md:h-8 text-white drop-shadow-lg" />
-                        </div>
-                      </div>
-                    </div>
-                    
-                    {/* Corner artistic elements */}
-                    <div className="absolute top-2 left-2 w-4 h-4 border-l-2 border-t-2 border-white/40 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-                    <div className="absolute top-2 right-2 w-4 h-4 border-r-2 border-t-2 border-white/40 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-                    <div className="absolute bottom-2 left-2 w-4 h-4 border-l-2 border-b-2 border-white/40 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-                    <div className="absolute bottom-2 right-2 w-4 h-4 border-r-2 border-b-2 border-white/40 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-                  </div>
-                  
-                  {/* Vintage photo label effect */}
-                  <div className="absolute -bottom-1 -right-1 w-6 h-6 md:w-8 md:h-8 bg-gradient-to-br from-amber-100 to-amber-200 rounded-full shadow-lg opacity-0 group-hover:opacity-90 transition-all duration-300 flex items-center justify-center">
-                    <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
-                  </div>
+                <div className="w-20 h-20 bg-gradient-to-br from-[#5B8B6B] to-[#7A5E3A] rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <value.icon className="w-10 h-10 text-[#fedd55]" />
                 </div>
+                <h3 className="text-2xl font-bold text-[#5B8B6B] mb-4">{value.title}</h3>
+                <p className="text-[#7A5E3A] leading-relaxed">{value.description}</p>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Contact CTA */}
-              <section className="py-24 bg-gradient-to-br from-[#5B8B6B] to-[#7A5E3A] relative overflow-hidden">
-                        <div className="absolute inset-0 bg-[url('/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_7853.jpeg')] bg-cover bg-center opacity-10"></div>
-        <div className="relative z-10 max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+      {/* Meet The Team Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
+            className="text-center mb-20"
           >
-                            <Leaf className="w-16 h-16 text-[#fedd55] mx-auto mb-6" />
-                <h2 className="text-5xl md:text-6xl font-bold text-[#fedd55] mb-8">
-              Ready for Your Transformation?
+            <h2 className="text-5xl md:text-6xl font-bold text-[#5B8B6B] mb-6">
+              Meet Our Team
             </h2>
-            <p className="text-xl text-white mb-12 max-w-2xl mx-auto leading-relaxed">
-              Let's discuss how we can create something exceptional for your outdoor space
+            <p className="text-xl text-[#7A5E3A] max-w-3xl mx-auto leading-relaxed">
+              Meet the skilled professionals behind every beautiful landscape
             </p>
-            
-            <Button 
-              size="lg" 
-              className="bg-white text-[#7A5E3A] hover:bg-gray-100 font-bold px-12 py-6 text-lg rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300"
-            >
-              Start Your Project
-              <ArrowRight className="ml-3 w-6 h-6" />
-            </Button>
           </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {teamMembers.map((member, index) => (
+              <motion.div
+                key={member.name}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group bg-white rounded-3xl shadow-luxury overflow-hidden text-center hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2"
+              >
+                <div className="aspect-square overflow-hidden">
+                  <img 
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    alt={`${member.name}, ${member.role} at GroundCover`}
+                    src={member.image}
+                    loading="lazy"
+                  />
+                </div>
+                <div className="p-8">
+                  <h3 className="text-2xl font-bold text-[#5B8B6B] mb-2">{member.name}</h3>
+                  <p className="text-[#5B8B6B] font-semibold mb-4">{member.role}</p>
+                  <p className="text-[#7A5E3A] leading-relaxed">{member.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Lightbox Modal */}
-      {selectedImage && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center lightbox-overlay" onClick={closeLightbox}>
-          <div className="relative max-w-6xl max-h-[90vh] mx-4">
-            <img
-              src={selectedImage.image}
-              alt={selectedImage.title}
-              className="max-w-full max-h-full object-contain rounded-2xl shadow-3xl"
-              onClick={(e) => e.stopPropagation()}
-              onError={(e) => {
-                console.error('Failed to load lightbox image:', selectedImage.image);
-                e.target.src = '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_5031.jpeg'; // Fallback image
-              }}
-            />
-            
-            <button
-              onClick={closeLightbox}
-              className="absolute top-4 right-4 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors duration-300"
+      {/* Contact Form Section */}
+      <section className="py-24 bg-gradient-to-br from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            {/* Contact Information */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="space-y-8"
             >
-              <X className="w-6 h-6" />
-            </button>
-            
-            <button
-              onClick={() => navigateImage('prev')}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors duration-300"
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </button>
-            
-            <button
-              onClick={() => navigateImage('next')}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors duration-300"
-            >
-              <ChevronRight className="w-6 h-6" />
-            </button>
-
-            <div className="absolute bottom-4 left-4 right-4 bg-black/70 backdrop-blur-sm rounded-2xl p-6 text-white">
-              <h3 className="text-2xl font-bold mb-2 text-white">{selectedImage.title}</h3>
-              <p className="text-white mb-2">{selectedImage.description}</p>
-              <div className="flex items-center justify-between">
-                                  <span className="text-[#fedd55] font-medium">{selectedImage.category}</span>
-                <span className="text-gray-200">{selectedImage.location}</span>
+              <div>
+                <h2 className="text-5xl md:text-6xl font-bold text-[#5B8B6B] mb-6">
+                  Contact Us Today
+                </h2>
+                <p className="text-xl text-[#7A5E3A] leading-relaxed mb-8">
+                  Ready to get started? Contact us today for your free consultation
+                </p>
               </div>
-            </div>
+
+              {/* Contact Methods */}
+              <div className="space-y-6">
+                <div className="flex items-center gap-4 p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+                  <div className="w-14 h-14 bg-gradient-to-br from-[#5B8B6B] to-[#7A5E3A] rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-7 h-7 text-[#fedd55] flex-shrink-0" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-[#5B8B6B] mb-1">Call Us</h4>
+                    <p className="text-[#7A5E3A] text-lg">+44 7510 359770</p>
+                    <p className="text-sm text-gray-500">Mon-Fri 8AM-6PM, Sat 8AM-4PM</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4 p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+                  <div className="w-14 h-14 bg-gradient-to-br from-[#5B8B6B] to-[#7A5E3A] rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-7 h-7 text-[#fedd55] flex-shrink-0" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-[#5B8B6B] mb-1">Email Us</h4>
+                    <p className="text-[#7A5E3A] text-lg">groundcovergardencare@gmail.com</p>
+                    <p className="text-sm text-gray-500">We respond within 4 hours</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4 p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+                  <div className="w-14 h-14 bg-gradient-to-br from-[#5B8B6B] to-[#7A5E3A] rounded-xl flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-7 h-7 text-[#fedd55] flex-shrink-0" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-[#5B8B6B] mb-1">Service Area</h4>
+                    <p className="text-[#7A5E3A] text-lg">Bristol & South West</p>
+                    <p className="text-sm text-gray-500">Including Bath, Gloucester, Cheltenham</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Why Choose Us */}
+              <div className="bg-gradient-to-br from-[#ECECEC] to-white rounded-2xl p-8">
+                <h3 className="text-2xl font-bold text-[#5B8B6B] mb-6">Why Choose GroundCover?</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-[#fedd55]" />
+                    <span className="text-[#7A5E3A]">Free no-obligation consultations</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Clock className="w-5 h-5 text-[#fedd55]" />
+                    <span className="text-[#7A5E3A]">15+ years of proven expertise</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Shield className="w-5 h-5 text-[#fedd55]" />
+                    <span className="text-[#7A5E3A]">Fully insured & guaranteed work</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Contact Form */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-3xl shadow-2xl p-8"
+            >
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-semibold text-[#5B8B6B] mb-2">
+                      Full Name *
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] focus:border-transparent transition-all duration-300"
+                      placeholder="Enter your full name"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-semibold text-[#5B8B6B] mb-2">
+                      Phone Number *
+                    </label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] focus:border-transparent transition-all duration-300"
+                      placeholder="Your phone number"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold text-[#5B8B6B] mb-2">
+                    Email Address *
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] focus:border-transparent transition-all duration-300"
+                    placeholder="your.email@example.com"
+                  />
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-semibold text-[#5B8B6B] mb-2">
+                      Service Required
+                    </label>
+                    <select
+                      name="service"
+                      value={formData.service}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] focus:border-transparent transition-all duration-300"
+                    >
+                      <option value="">Select a service</option>
+                      {services.map((service) => (
+                        <option key={service} value={service}>{service}</option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-semibold text-[#5B8B6B] mb-2">
+                      Location
+                    </label>
+                    <input
+                      type="text"
+                      name="location"
+                      value={formData.location}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] focus:border-transparent transition-all duration-300"
+                      placeholder="e.g., Bristol, Bath"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-semibold text-[#5B8B6B] mb-2">
+                      Project Budget
+                    </label>
+                    <select
+                      name="projectBudget"
+                      value={formData.projectBudget}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] focus:border-transparent transition-all duration-300"
+                    >
+                      <option value="">Select budget range</option>
+                      {budgetRanges.map((budget) => (
+                        <option key={budget} value={budget}>{budget}</option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-semibold text-[#5B8B6B] mb-2">
+                      Timeline
+                    </label>
+                    <select
+                      name="timeline"
+                      value={formData.timeline}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] focus:border-transparent transition-all duration-300"
+                    >
+                      <option value="">When do you need this?</option>
+                      {timelines.map((timeline) => (
+                        <option key={timeline} value={timeline}>{timeline}</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold text-[#5B8B6B] mb-2">
+                    Project Details
+                  </label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    rows={5}
+                    className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] focus:border-transparent transition-all duration-300 resize-none"
+                    placeholder="Tell us about your project, garden size, specific requirements, or any questions you have..."
+                  />
+                </div>
+
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full bg-[#fedd55] hover:bg-[#fedd55] text-black font-semibold py-4 text-lg rounded-xl shadow-xl transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? (
+                    <div className="flex items-center justify-center gap-3">
+                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                      Sending Message...
+                    </div>
+                  ) : (
+                    <div className="flex items-center justify-center gap-3">
+                      <Send className="w-5 h-5" />
+                      Get Free Quote
+                    </div>
+                  )}
+                </Button>
+
+                <p className="text-sm text-gray-500 text-center">
+                  We'll respond within 24 hours with a detailed quote and consultation booking.
+                </p>
+              </form>
+            </motion.div>
           </div>
         </div>
-      )}
+      </section>
     </div>
   );
 };
 
-export default GalleryPage;
+export default AboutPage;
