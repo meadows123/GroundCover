@@ -92,7 +92,7 @@ const HomePage = () => {
             <img  
               className="w-full h-full object-cover opacity-40" 
               alt="Premium landscaping and garden design by GroundCover"
-              src="/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_6702.jpeg"
+              src="/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_1325.jpeg"
             />
           </div>
           
@@ -116,10 +116,10 @@ const HomePage = () => {
               className="text-5xl md:text-8xl font-bold mb-8 leading-tight"
             >
               <span className="text-[#fedd55]">
-                Transforming
+                Your Grounds
               </span>
               <br />
-              <span className="text-white">Outdoor Spaces</span>
+              <span className="text-white">Maintenance Experts</span>
             </motion.h1>
             
             <motion.p

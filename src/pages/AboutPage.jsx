@@ -110,7 +110,7 @@ const AboutPage = () => {
     <div className="pt-16 min-h-screen bg-gradient-to-br from-gray-50 to-white">
       {/* Hero Header */}
       <section className="relative py-32 bg-gradient-to-br from-[#5B8B6B] via-[#7A5E3A] to-[#5B8B6B] text-white overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_0775.jpeg')] bg-cover bg-center opacity-20"></div>
+                    <div className="absolute inset-0 bg-[url('/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_0625.jpeg')] bg-cover bg-center opacity-20"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
