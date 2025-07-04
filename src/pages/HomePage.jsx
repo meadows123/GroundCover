@@ -208,6 +208,7 @@ const HomePage = () => {
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
                       alt={item.title}
                       src={item.image}
+                      loading="lazy"
                     />
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-[#5B8B6B]/90 via-[#5B8B6B]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -278,6 +279,7 @@ const HomePage = () => {
                   className="w-full h-auto object-cover"
                   alt="David Jones and Jack Fleming - GroundCover founders"
                   src="/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_1011.jpg"
+                  loading="lazy"
                 />
               </motion.div>
             </div>

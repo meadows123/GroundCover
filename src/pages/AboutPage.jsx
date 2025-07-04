@@ -194,6 +194,7 @@ const AboutPage = () => {
                 className="w-full h-auto object-cover"
                 alt="GroundCover team working on a beautiful landscape project"
                 src="/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_1011.jpg"
+                loading="lazy"
               />
             </motion.div>
           </div>
@@ -270,6 +271,7 @@ const AboutPage = () => {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     alt={`${member.name}, ${member.role} at GroundCover`}
                     src={member.image}
+                    loading="lazy"
                   />
                 </div>
                 <div className="p-8">
