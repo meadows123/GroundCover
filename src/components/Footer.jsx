@@ -12,7 +12,7 @@ const Footer = () => {
             <div className="flex items-center">
               <div className="w-20 h-20 rounded-2xl overflow-hidden">
                 <img 
-                  src="/images/wetransfer_img_6702-jpeg_2025-07-01_0636/Logo-Evenbigger.png" 
+                  src="/images/wetransfer_img_6702-jpeg_2025-07-01_0636/GroundCover-Trans-bigger.png" 
                   alt="GroundCover Logo" 
                   className="w-full h-full object-contain"
                 />

@@ -29,7 +29,7 @@ const Navigation = () => {
             <Link to="/" className="flex items-center">
               <div className="h-14 w-auto">
                 <img 
-                  src="/images/wetransfer_img_6702-jpeg_2025-07-01_0636/Logo-Evenbigger.png" 
+                  src="/images/wetransfer_img_6702-jpeg_2025-07-01_0636/Thebiggestlogo.png" 
                   alt="GroundCover Logo" 
                   className="h-full w-auto object-contain"
                 />
