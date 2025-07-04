@@ -23,13 +23,13 @@ const AboutPage = () => {
       name: 'Jack Fleming',
       role: 'Director',
       description: 'With over 20 years of experience, Jack brings unparalleled expertise to every landscape transformation.',
-      image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_5031.jpeg',
+      image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/Jack.jpg',
     },
     {
       name: 'David Jones',
       role: 'Director',
       description: 'David combines artistic vision with technical expertise to create stunning outdoor environments.',
-      image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_2755.jpeg',
+      image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/Dave.jpg',
     },
     {
       name: 'Team Member',

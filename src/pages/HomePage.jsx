@@ -58,7 +58,9 @@ const HomePage = () => {
       date: 'A year ago',
       text: 'Very friendly service. All work was completed at a high quality. The team are perfectionists.',
       verified: true,
-      reviewCount: '1 review • 21 photos'
+      reviewCount: '1 review • 21 photos',
+      initials: 'SL',
+      avatarColor: 'bg-blue-500'
     },
     {
       id: 2,
@@ -68,7 +70,9 @@ const HomePage = () => {
       date: 'A year ago',
       text: 'Great service highly recommended!',
       verified: true,
-      reviewCount: '3 reviews'
+      reviewCount: '3 reviews',
+      initials: 'JG',
+      avatarColor: 'bg-green-500'
     },
     {
       id: 3,
@@ -78,7 +82,9 @@ const HomePage = () => {
       date: '9 months ago',
       text: 'Two trust-worthy and good-looking fellas saving a completely over-grown garden neglected by the tenants, showing care and respect to the plants. What more can you ask for?',
       verified: true,
-      reviewCount: '25 reviews • 20 photos'
+      reviewCount: '25 reviews • 20 photos',
+      initials: 'YY',
+      avatarColor: 'bg-purple-500'
     }
   ];
 
@@ -101,9 +107,9 @@ const HomePage = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: "easeOut" }}
-              className="mb-8"
+              className="mb-12 sm:mb-8"
             >
-              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-6">
+              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-8 sm:mb-6">
                 <Leaf className="w-5 h-5 text-[#fedd55]" />
                 <span className="text-sm font-medium">Transforming outdoor spaces</span>
               </div>
@@ -353,8 +359,15 @@ const HomePage = () => {
 
                   {/* Customer info */}
                   <div className="border-t border-gray-100 pt-4">
-                    <div className="font-semibold text-[#5B8B6B] mb-1">{review.name}</div>
-                    <div className="text-xs text-gray-500 mb-1">{review.reviewCount}</div>
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className={`w-12 h-12 rounded-full ${review.avatarColor} flex items-center justify-center shadow-lg`}>
+                        <span className="text-white font-bold text-sm">{review.initials}</span>
+                      </div>
+                      <div className="flex-1">
+                        <div className="font-semibold text-[#5B8B6B] mb-1">{review.name}</div>
+                        <div className="text-xs text-gray-500">{review.reviewCount}</div>
+                      </div>
+                    </div>
                     <div className="text-sm text-gray-500">{review.date}</div>
                   </div>
                 </motion.div>
