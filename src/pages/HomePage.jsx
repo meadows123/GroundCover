@@ -17,12 +17,12 @@ const HomePage = () => {
 
   const portfolioItems = [
     {
-      image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_5031.jpeg',
+      image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_1485.jpg',
       title: 'Luxury Garden Design',
       description: 'Complete transformation with modern landscaping'
     },
     {
-      image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_2755.jpeg',
+      image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_2772.jpeg',
       title: 'Premium Patio Installation',
       description: 'Professional hardscaping and outdoor living'
     },
@@ -37,7 +37,7 @@ const HomePage = () => {
       description: 'Bespoke design and installation services'
     },
     {
-      image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_5223.jpeg',
+      image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_0498.jpeg',
       title: 'Premium Driveways & Pathways',
       description: 'Stunning entrance solutions and walkways'
     },
@@ -105,7 +105,7 @@ const HomePage = () => {
             >
               <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-6">
                 <Leaf className="w-5 h-5 text-[#fedd55]" />
-                <span className="text-sm font-medium">Your Grounds Maintenance Experts</span>
+                <span className="text-sm font-medium">Transforming outdoor spaces</span>
               </div>
             </motion.div>
 
