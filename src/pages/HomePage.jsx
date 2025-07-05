@@ -92,7 +92,7 @@ const HomePage = () => {
     <>
       <div className="pt-16 overflow-x-hidden">
         {/* Hero Section */}
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#5B8B6B] via-[#7A5E3A] to-[#5B8B6B]">
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#5B8B6B] via-[#7A5E3A] to-[#5B8B6B] pb-16 sm:pb-0">
           <div className="absolute inset-0 z-0">
             <div className="absolute inset-0 bg-gradient-to-r from-[#5B8B6B]/90 via-[#7A5E3A]/70 to-[#5B8B6B]/90 z-10"></div>
             <img  
@@ -107,7 +107,7 @@ const HomePage = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: "easeOut" }}
-              className="mb-12 sm:mb-8"
+              className="mb-12 sm:mb-8 mt-20 sm:mt-0"
             >
               <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-8 sm:mb-6">
                 <Leaf className="w-5 h-5 text-[#fedd55]" />
