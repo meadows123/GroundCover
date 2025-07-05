@@ -459,7 +459,7 @@ const HomePage = () => {
                 <Button 
                   size="lg" 
                   onClick={() => setIsBookingModalOpen(true)}
-                  className="bg-[#5B8B6B] hover:bg-[#7A5E3A] text-white font-semibold px-10 py-6 text-lg rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300"
+                  className="bg-[#fedd55] hover:bg-[#fedd55] text-black font-semibold px-10 py-6 text-lg rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300"
                 >
                   Book Free Consultation
                   <CalendarDays className="ml-3 w-6 h-6" />
