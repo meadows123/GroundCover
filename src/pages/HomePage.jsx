@@ -17,7 +17,7 @@ const HomePage = () => {
 
   const portfolioItems = [
     {
-      image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_2772.jpeg',
+      image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_5169.jpeg',
       title: 'Commercial',
       description: 'Professional landscaping and outdoor solutions for businesses and public spaces.'
     },
@@ -27,7 +27,7 @@ const HomePage = () => {
       description: 'Year-round grounds and garden maintenance for pristine, safe environments.'
     },
     {
-      image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_1183.jpeg',
+      image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_0488.jpeg',
       title: 'Gardening',
       description: 'Expert gardening, planting, and design for beautiful outdoor spaces.'
     },
