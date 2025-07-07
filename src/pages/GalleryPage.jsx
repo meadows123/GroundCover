@@ -140,7 +140,17 @@ const GalleryPage = () => {
       title: 'Corporate Headquarters Landscaping',
       description: 'Professional corporate landscaping with year-round interest',
       location: 'Bristol Business Park'
-    }
+    },
+    { id: 1001, category: 'Gallery', image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_1788.jpg', title: 'Gallery Photo', description: 'Project photo from our portfolio', location: '' },
+    { id: 1002, category: 'Gallery', image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_1785.jpg', title: 'Gallery Photo', description: 'Project photo from our portfolio', location: '' },
+    { id: 1003, category: 'Gallery', image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_1782.jpg', title: 'Gallery Photo', description: 'Project photo from our portfolio', location: '' },
+    { id: 1004, category: 'Gallery', image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_1772.jpg', title: 'Gallery Photo', description: 'Project photo from our portfolio', location: '' },
+    { id: 1005, category: 'Gallery', image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_2037.jpg', title: 'Gallery Photo', description: 'Project photo from our portfolio', location: '' },
+    { id: 1006, category: 'Gallery', image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_0818.jpg', title: 'Gallery Photo', description: 'Project photo from our portfolio', location: '' },
+    { id: 1007, category: 'Gallery', image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_0413.jpg', title: 'Gallery Photo', description: 'Project photo from our portfolio', location: '' },
+    { id: 1008, category: 'Gallery', image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_0420.jpg', title: 'Gallery Photo', description: 'Project photo from our portfolio', location: '' },
+    { id: 1009, category: 'Gallery', image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_0496.jpg', title: 'Gallery Photo', description: 'Project photo from our portfolio', location: '' },
+    { id: 1010, category: 'Gallery', image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_1485.jpg', title: 'Gallery Photo', description: 'Project photo from our portfolio', location: '' },
   ];
 
   const featuredProjects = [
