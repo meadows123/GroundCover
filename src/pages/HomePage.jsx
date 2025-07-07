@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, CheckCircle, Star, Users, Calendar, Award, CalendarDays, Phone, Mail, MapPin, Leaf, Sparkles } from 'lucide-react';
+import { ArrowRight, CheckCircle, Star, Users, Calendar, Award, CalendarDays, Phone, Mail, MapPin, Leaf } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { BookingModal } from '@/components/BookingModal';
 
@@ -9,10 +9,24 @@ const HomePage = () => {
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
 
   const features = [
-    { icon: Sparkles, title: 'Premium Quality', description: 'Exceptional craftsmanship in every detail' },
-    { icon: Users, title: 'Expert Team', description: '15+ years of professional expertise' },
-    { icon: Calendar, title: 'Flexible Service', description: 'Tailored to your schedule' },
-    { icon: Award, title: 'Fully Insured', description: 'Complete protection & peace of mind' },
+    {
+      icon: Award,
+      title: 'Commercial',
+      description: 'Professional landscaping for business and public spaces.',
+      image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_2772.jpeg',
+    },
+    {
+      icon: Calendar,
+      title: 'Maintenance',
+      description: 'Year-round grounds and garden maintenance.',
+      image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_1325.jpeg',
+    },
+    {
+      icon: Leaf,
+      title: 'Gardening',
+      description: 'Expert gardening and planting services.',
+      image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_1183.jpeg',
+    },
   ];
 
   const portfolioItems = [
@@ -417,7 +431,7 @@ const HomePage = () => {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="flex flex-row md:grid md:grid-cols-3 gap-4 md:gap-8 justify-center">
               {features.map((feature, index) => (
                 <motion.div
                   key={feature.title}
@@ -425,13 +439,16 @@ const HomePage = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="text-center p-8 rounded-3xl bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 transform hover:-translate-y-2 group"
+                  className="flex-1 text-center p-4 md:p-8 rounded-3xl bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 transform hover:-translate-y-2 group"
                 >
-                  <div className="w-20 h-20 bg-gradient-to-br from-[#5B8B6B] to-[#7A5E3A] rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <feature.icon className="w-10 h-10 text-[#fedd55]" />
+                  <div className="w-full h-32 md:h-40 rounded-2xl overflow-hidden mb-4 md:mb-6 flex items-center justify-center">
+                    <img src={feature.image} alt={feature.title + ' image'} className="object-cover w-full h-full" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-4">{feature.title}</h3>
-                  <p className="text-gray-300 leading-relaxed">{feature.description}</p>
+                  <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-[#5B8B6B] to-[#7A5E3A] rounded-2xl flex items-center justify-center mx-auto mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <feature.icon className="w-8 h-8 md:w-10 md:h-10 text-[#fedd55]" />
+                  </div>
+                  <h3 className="text-lg md:text-2xl font-bold text-white mb-2 md:mb-4">{feature.title}</h3>
+                  <p className="text-gray-300 leading-relaxed text-sm md:text-base">{feature.description}</p>
                 </motion.div>
               ))}
             </div>
