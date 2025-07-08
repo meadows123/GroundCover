@@ -10,12 +10,12 @@ const GalleryPage = () => {
   const [activeFilter, setActiveFilter] = useState('All');
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
 
-  const filters = ['All', 'Garden Design', 'Patios & Driveways', 'Landscape Architecture', 'Maintenance', 'Commercial'];
+  const filters = ['All', 'Exterior Cleaning', 'Grounds Maintenance', 'Commerical', 'Planting', 'Landscaping'];
 
   const portfolioProjects = [
     {
       id: 1,
-      category: 'Garden Design',
+      category: 'Grounds Maintenance',
       image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_5031.jpeg',
       title: 'Luxury Contemporary Garden',
       description: 'Complete garden transformation with modern design elements and premium materials',
@@ -23,7 +23,7 @@ const GalleryPage = () => {
     },
     {
       id: 2,
-      category: 'Patios & Driveways',
+      category: 'Grounds Maintenance',
       image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_2755.jpeg',
       title: 'Premium Patio Installation',
       description: 'High-end natural stone patio with integrated outdoor living space',
@@ -31,7 +31,7 @@ const GalleryPage = () => {
     },
     {
       id: 3,
-      category: 'Landscape Architecture',
+      category: 'Landscaping',
       image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_1325.jpeg',
       title: 'Architectural Landscape Design',
       description: 'Sophisticated landscaping with structured plantings and modern features',
@@ -39,7 +39,7 @@ const GalleryPage = () => {
     },
     {
       id: 4,
-      category: 'Garden Design',
+      category: 'Commerical',
       image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_0775.jpeg',
       title: 'Elegant Garden Renovation',
       description: 'Traditional garden updated with contemporary design principles',
@@ -47,7 +47,7 @@ const GalleryPage = () => {
     },
     {
       id: 5,
-      category: 'Patios & Driveways',
+      category: 'Landscaping',
       image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_5223.jpeg',
       title: 'Executive Driveway Project',
       description: 'Premium block paving with decorative borders and lighting integration',
@@ -55,7 +55,7 @@ const GalleryPage = () => {
     },
     {
       id: 6,
-      category: 'Maintenance',
+      category: 'Grounds Maintenance',
       image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_1183.jpeg',
       title: 'Garden Maintenance Excellence',
       description: 'Ongoing professional maintenance showcasing pristine results',
@@ -63,7 +63,7 @@ const GalleryPage = () => {
     },
     {
       id: 7,
-      category: 'Landscape Architecture',
+      category: 'Landscaping',
       image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_0487.jpeg',
       title: 'Structural Landscaping',
       description: 'Bold architectural elements combined with natural beauty',
@@ -71,7 +71,7 @@ const GalleryPage = () => {
     },
     {
       id: 8,
-      category: 'Garden Design',
+      category: 'Planting',
       image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_0924.jpeg',
       title: 'Naturalistic Garden Design',
       description: 'Organic design approach with native plantings and natural materials',
@@ -79,7 +79,7 @@ const GalleryPage = () => {
     },
     {
       id: 9,
-      category: 'Commercial',
+      category: 'Commerical',
       image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_0498.jpeg',
       title: 'Commercial Landscape Project',
       description: 'Large-scale commercial landscaping with sustainable design',
@@ -87,7 +87,7 @@ const GalleryPage = () => {
     },
     {
       id: 10,
-      category: 'Patios & Driveways',
+      category: 'Landscaping',
       image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_0497.jpeg',
       title: 'Multi-Level Patio Design',
       description: 'Complex terraced patio with retaining walls and integrated seating',
@@ -95,7 +95,7 @@ const GalleryPage = () => {
     },
     {
       id: 11,
-      category: 'Garden Design',
+      category: 'Planting',
       image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_2860.jpeg',
       title: 'Family Garden Transformation',
       description: 'Functional yet beautiful family garden with play areas and relaxation zones',
@@ -103,7 +103,7 @@ const GalleryPage = () => {
     },
     {
       id: 12,
-      category: 'Landscape Architecture',
+      category: 'Landscaping',
       image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_7434.jpeg',
       title: 'Contemporary Landscape Design',
       description: 'Cutting-edge design with innovative materials and techniques',
@@ -111,7 +111,7 @@ const GalleryPage = () => {
     },
     {
       id: 13,
-      category: 'Maintenance',
+      category: 'Grounds Maintenance',
       image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_5746.jpeg',
       title: 'Estate Garden Maintenance',
       description: 'Premium maintenance service for large estate gardens',
@@ -119,7 +119,7 @@ const GalleryPage = () => {
     },
     {
       id: 14,
-      category: 'Garden Design',
+      category: 'Planting',
       image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_7853.jpeg',
       title: 'Boutique Garden Design',
       description: 'Intimate garden space maximized for beauty and functionality',
@@ -127,7 +127,7 @@ const GalleryPage = () => {
     },
     {
       id: 15,
-      category: 'Patios & Driveways',
+      category: 'Landscaping',
       image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_7261.jpeg',
       title: 'Luxury Outdoor Living Space',
       description: 'Premium outdoor entertainment area with kitchen and dining facilities',
@@ -135,7 +135,7 @@ const GalleryPage = () => {
     },
     {
       id: 16,
-      category: 'Commercial',
+      category: 'Commerical',
       image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_6702.jpeg',
       title: 'Corporate Headquarters Landscaping',
       description: 'Professional corporate landscaping with year-round interest',

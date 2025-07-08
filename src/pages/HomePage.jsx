@@ -23,12 +23,12 @@ const HomePage = () => {
     },
     {
       image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_1325.jpeg',
-      title: 'Maintenance',
+      title: 'Domestic',
       description: 'Year-round grounds and garden maintenance for pristine, safe environments.'
     },
     {
       image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_0488.jpeg',
-      title: 'Gardening',
+      title: 'Landscaping',
       description: 'Expert gardening, planting, and design for beautiful outdoor spaces.'
     },
   ];
@@ -177,7 +177,7 @@ const HomePage = () => {
               className="text-center mb-20"
             >
               <h2 className="text-5xl md:text-6xl font-bold text-[#5B8B6B] mb-6">
-                Our Premium Work
+                What We Do
               </h2>
               <p className="text-xl text-[#7A5E3A] max-w-3xl mx-auto leading-relaxed">
                 Every project showcases our commitment to excellence and attention to detail
@@ -441,15 +441,18 @@ const HomePage = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <Button 
-                  size="lg" 
-                  onClick={() => setIsBookingModalOpen(true)}
-                  className="bg-[#fedd55] hover:bg-[#fedd55] text-black font-semibold px-10 py-6 text-lg rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300"
+                <a
+                  href="https://wa.me/447510359770"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative flex items-center justify-center bg-[#25D366] hover:bg-[#128C7E] text-white rounded-full shadow-2xl transform hover:scale-110 transition-all duration-300 w-20 h-20"
+                  aria-label="Chat on WhatsApp"
                 >
-                  Book Free Consultation
-                  <CalendarDays className="ml-3 w-6 h-6" />
-                </Button>
-                
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" className="w-12 h-12">
+                    <path d="M16 3C9.373 3 4 8.373 4 15c0 2.385.832 4.584 2.236 6.41L4.06 28.06a1 1 0 001.18 1.18l6.65-2.176A12.94 12.94 0 0016 27c6.627 0 12-5.373 12-12S22.627 3 16 3zm0 22c-1.77 0-3.48-.38-5.01-1.1l-.36-.17-3.95 1.29 1.3-3.85-.18-.37A9.96 9.96 0 016 15c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10zm5.29-7.71c-.29-.15-1.71-.84-1.97-.94-.26-.1-.45-.15-.64.15-.19.29-.74.94-.91 1.13-.17.19-.34.21-.63.07-.29-.15-1.23-.45-2.34-1.43-.86-.77-1.44-1.72-1.61-2.01-.17-.29-.02-.45.13-.6.13-.13.29-.34.43-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.64-1.54-.88-2.11-.23-.56-.47-.48-.64-.49-.16-.01-.36-.01-.56-.01-.19 0-.5.07-.76.36-.26.29-1 1-.99 2.43.01 1.43 1.03 2.81 1.18 3.01.15.19 2.03 3.1 4.93 4.23.69.3 1.23.48 1.65.61.69.22 1.32.19 1.81.12.55-.08 1.71-.7 1.95-1.38.24-.68.24-1.26.17-1.38-.07-.12-.26-.19-.55-.34z"/>
+                  </svg>
+                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full opacity-0 group-hover:opacity-100 bg-black text-white text-xs rounded px-3 py-1 mt-2 pointer-events-none transition-opacity duration-200 whitespace-nowrap z-10">Chat on WhatsApp</span>
+                </a>
                 <Button 
                   variant="outline" 
                   size="lg" 

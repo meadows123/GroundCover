@@ -31,12 +31,6 @@ const AboutPage = () => {
       description: 'David combines artistic vision with technical expertise to create stunning outdoor environments.',
       image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/dave-1.jpg',
     },
-    {
-      name: 'Team Member',
-      role: 'Director',
-      description: 'Our third team member ensures every project exceeds expectations through meticulous planning and execution.',
-      image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_1325.jpeg',
-    },
   ];
 
   const values = [
