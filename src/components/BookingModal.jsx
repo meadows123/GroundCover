@@ -7,6 +7,7 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 import { cn } from '@/lib/utils';
 import { format } from 'date-fns';
 import { useToast } from '@/components/ui/use-toast';
+import emailjs from '@emailjs/browser';
 
 export const BookingModal = ({ isOpen, setIsOpen }) => {
   const [selectedDate, setSelectedDate] = useState(null);
@@ -15,6 +16,7 @@ export const BookingModal = ({ isOpen, setIsOpen }) => {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
   const timeSlots = [
@@ -22,7 +24,7 @@ export const BookingModal = ({ isOpen, setIsOpen }) => {
     '01:00 PM', '02:00 PM', '03:00 PM', '04:00 PM'
   ];
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!selectedDate || !selectedTime || !name || !email) {
       toast({
@@ -33,24 +35,60 @@ export const BookingModal = ({ isOpen, setIsOpen }) => {
       return;
     }
 
-    console.log({ name, email, phone, selectedDate, selectedTime, message });
-    
-    localStorage.setItem('bookingRequest', JSON.stringify({
-      name, email, phone, selectedDate: format(selectedDate, 'PPP'), selectedTime, message, submittedAt: new Date().toISOString()
-    }));
+    setIsSubmitting(true);
 
-    toast({
-      title: 'Booking Request Sent! 🎉',
-      description: `Thanks, ${name}! We've received your request for a visit on ${format(selectedDate, 'PPP')} at ${selectedTime}. We'll be in touch soon!`,
-      className: 'bg-green-600 text-white',
-    });
-    setIsOpen(false);
-    setSelectedDate(null);
-    setSelectedTime('');
-    setName('');
-    setEmail('');
-    setPhone('');
-    setMessage('');
+    // EmailJS template parameters
+    const templateParams = {
+      to_email: 'groundcovergardencare@gmail.com',
+      from_name: name,
+      from_email: email,
+      phone_number: phone || 'Not provided',
+      preferred_date: format(selectedDate, 'PPP'),
+      preferred_time: selectedTime,
+      project_details: message || 'No additional details provided',
+      reply_to: email,
+    };
+
+    try {
+      // Replace these with your actual EmailJS credentials
+      const result = await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID',
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID',
+        templateParams,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY'
+      );
+
+      console.log('Email sent successfully:', result);
+
+      // Still save to localStorage as backup
+      localStorage.setItem('bookingRequest', JSON.stringify({
+        name, email, phone, selectedDate: format(selectedDate, 'PPP'), selectedTime, message, submittedAt: new Date().toISOString()
+      }));
+
+      toast({
+        title: 'Booking Request Sent! 🎉',
+        description: `Thanks, ${name}! We've received your request for a visit on ${format(selectedDate, 'PPP')} at ${selectedTime}. We'll be in touch soon!`,
+        className: 'bg-green-600 text-white',
+      });
+
+      // Reset form and close modal
+      setIsOpen(false);
+      setSelectedDate(null);
+      setSelectedTime('');
+      setName('');
+      setEmail('');
+      setPhone('');
+      setMessage('');
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      toast({
+        title: 'Error Sending Request',
+        description: 'There was a problem sending your booking request. Please try again or contact us directly.',
+        variant: 'destructive',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const modalVariants = {
@@ -227,9 +265,11 @@ export const BookingModal = ({ isOpen, setIsOpen }) => {
               {/* Submit Button */}
               <Button
                 type="submit"
-                className="w-full bg-[#fedd55] hover:bg-[#fedd55] text-black font-semibold py-3 text-lg"
+                disabled={isSubmitting}
+                className="w-full bg-[#fedd55] hover:bg-[#fedd55] text-black font-semibold py-3 text-lg disabled:opacity-50"
               >
-                Request Free Visit <Send className="ml-2 h-5 w-5" />
+                {isSubmitting ? 'Sending...' : 'Request Free Visit'} 
+                <Send className="ml-2 h-5 w-5" />
               </Button>
             </form>
           </motion.div>

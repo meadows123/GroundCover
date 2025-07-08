@@ -156,24 +156,24 @@ const GalleryPage = () => {
   const featuredProjects = [
     {
       id: 1,
-      title: 'Award-Winning Garden Transformation',
-      beforeImage: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_0386.jpeg',
-      afterImage: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_5536.jpeg',
-      description: 'Complete transformation of a neglected urban garden into a contemporary outdoor sanctuary'
+      title: 'Transformation 1',
+      beforeImage: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/before.jpg',
+      afterImage: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/after.jpg',
+      description: 'See the dramatic before and after of this project.'
     },
     {
       id: 2,
-      title: 'Executive Patio & Landscape Design',
-      beforeImage: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_4461.jpeg',
-      afterImage: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_0931.jpeg',
-      description: 'Premium materials and expert craftsmanship create an exceptional outdoor living space'
+      title: 'Transformation 2',
+      beforeImage: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/before1.JPG',
+      afterImage: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/after1.JPG',
+      description: 'See the dramatic before and after of this project.'
     },
     {
       id: 3,
-      title: 'Modern Family Garden',
-      beforeImage: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_2772.jpeg',
-      afterImage: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_5165.jpeg',
-      description: 'Functional family space combining play areas with sophisticated design elements'
+      title: 'Transformation 3',
+      beforeImage: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/before2.jpg',
+      afterImage: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/after2.jpg',
+      description: 'See the dramatic before and after of this project.'
     }
   ];
 
