@@ -2,10 +2,10 @@
 // Replace these with your actual EmailJS credentials from your dashboard
 
 export const emailjsConfig = {
-  serviceId: process.env.REACT_APP_EMAILJS_SERVICE_ID,
-  contactTemplateId: process.env.REACT_APP_EMAILJS_CONTACT_TEMPLATE_ID, // Contact form template
-  surveyTemplateId: process.env.REACT_APP_EMAILJS_SURVEY_TEMPLATE_ID,   // Survey form template
-  publicKey: process.env.REACT_APP_EMAILJS_PUBLIC_KEY,
+  serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+  contactTemplateId: import.meta.env.VITE_EMAILJS_CONTACT_TEMPLATE_ID, // Contact form template
+  surveyTemplateId: import.meta.env.VITE_EMAILJS_SURVEY_TEMPLATE_ID,   // Survey form template
+  publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
 };
 
 // To get these credentials and set up survey emails:
