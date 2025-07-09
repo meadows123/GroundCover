@@ -2,10 +2,10 @@
 // Replace these with your actual EmailJS credentials from your dashboard
 
 export const emailjsConfig = {
-  serviceId: 'YOUR_SERVICE_ID', // Replace with your EmailJS service ID (e.g., 'service_abc123')
-  templateId: 'YOUR_TEMPLATE_ID', // Replace with your contact form template ID (e.g., 'template_xyz789')
-  surveyTemplateId: 'template_survey', // This will be your survey template ID
-  publicKey: 'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key (e.g., 'abcdef123456')
+  serviceId: process.env.REACT_APP_EMAILJS_SERVICE_ID,
+  contactTemplateId: process.env.REACT_APP_EMAILJS_CONTACT_TEMPLATE_ID, // Contact form template
+  surveyTemplateId: process.env.REACT_APP_EMAILJS_SURVEY_TEMPLATE_ID,   // Survey form template
+  publicKey: process.env.REACT_APP_EMAILJS_PUBLIC_KEY,
 };
 
 // To get these credentials and set up survey emails:
