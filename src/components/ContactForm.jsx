@@ -208,7 +208,7 @@ const ContactForm = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] focus:border-transparent transition-all duration-300 text-[#5B8B6B]"
                     placeholder="Enter your full name"
                   />
                 </div>
@@ -223,7 +223,7 @@ const ContactForm = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] focus:border-transparent transition-all duration-300 text-[#5B8B6B]"
                     placeholder="Your phone number"
                   />
                 </div>
@@ -239,7 +239,7 @@ const ContactForm = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] focus:border-transparent transition-all duration-300"
+                  className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] focus:border-transparent transition-all duration-300 text-[#5B8B6B]"
                   placeholder="your.email@example.com"
                 />
               </div>
@@ -253,7 +253,7 @@ const ContactForm = () => {
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] focus:border-transparent transition-all duration-300 text-[#5B8B6B]"
                   >
                     <option value="">Select a service</option>
                     {services.map((service) => (
@@ -271,7 +271,7 @@ const ContactForm = () => {
                     name="location"
                     value={formData.location}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] focus:border-transparent transition-all duration-300 text-[#5B8B6B]"
                                           placeholder="e.g., Bristol, Bath"
                   />
                 </div>
@@ -286,7 +286,7 @@ const ContactForm = () => {
                     name="projectBudget"
                     value={formData.projectBudget}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] focus:border-transparent transition-all duration-300 text-[#5B8B6B]"
                   >
                     <option value="">Select budget range</option>
                     {budgetRanges.map((budget) => (
@@ -303,7 +303,7 @@ const ContactForm = () => {
                     name="timeline"
                     value={formData.timeline}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] focus:border-transparent transition-all duration-300 text-[#5B8B6B]"
                   >
                     <option value="">When do you need this?</option>
                     {timelines.map((timeline) => (
@@ -322,7 +322,7 @@ const ContactForm = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows={5}
-                  className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] focus:border-transparent transition-all duration-300 resize-none"
+                  className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] focus:border-transparent transition-all duration-300 resize-none text-[#5B8B6B]"
                   placeholder="Tell us about your project, garden size, specific requirements, or any questions you have..."
                 />
               </div>
