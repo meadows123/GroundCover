@@ -8,6 +8,7 @@ import SurveyPage from '@/pages/SurveyPage';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
+import ContactForm from '@/components/ContactForm';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/survey" element={<SurveyPage />} />
+          <Route path="/contact" element={<ContactForm />} />
         </Routes>
         <Footer />
         <Toaster />
