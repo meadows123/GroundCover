@@ -70,7 +70,7 @@ const ContactForm = () => {
       // Send email using EmailJS
       await emailjs.send(
         emailjsConfig.serviceId,
-        emailjsConfig.templateId,
+        emailjsConfig.contactTemplateId,
         templateParams,
         emailjsConfig.publicKey
       );
