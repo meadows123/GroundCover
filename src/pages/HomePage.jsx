@@ -27,7 +27,7 @@ const HomePage = () => {
       description: 'Year-round grounds and garden maintenance for pristine, safe environments.'
     },
     {
-      image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_0488.jpeg',
+      image: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/landscaping.jpg',
       title: 'Landscaping',
       description: 'Expert gardening, planting, and design for beautiful outdoor spaces.'
     },
@@ -79,11 +79,12 @@ const HomePage = () => {
         {/* Hero Section */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#5B8B6B] via-[#7A5E3A] to-[#5B8B6B] pb-16 sm:pb-0">
           <div className="absolute inset-0 z-0">
-            <div className="absolute inset-0 bg-gradient-to-r from-[#5B8B6B]/90 via-[#7A5E3A]/70 to-[#5B8B6B]/90 z-10"></div>
+            {/* Softer green overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#5B8B6B]/40 via-[#7A5E3A]/20 to-[#5B8B6B]/40 z-10"></div>
             <img  
-              className="w-full h-full object-cover opacity-40" 
+              className="w-full h-full object-cover opacity-70" 
               alt="Premium landscaping and garden design by GroundCover"
-              src="/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_1325.jpeg"
+              src="/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_0497.jpeg"
             />
           </div>
           

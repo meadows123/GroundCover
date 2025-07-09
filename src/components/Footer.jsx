@@ -57,32 +57,28 @@ const Footer = () => {
           {/* Services */}
           <div className="space-y-6">
             <h3 className="text-xl font-bold text-black">Our Services</h3>
-                         <div className="space-y-3">
-                             <Link to="/gallery" className="flex items-center gap-2 text-gray-600 hover:text-[#fedd55] transition-colors duration-300 group">
+            <div className="space-y-3">
+              <Link to="/gallery?filter=Garden%20Design" className="flex items-center gap-2 text-gray-600 hover:text-[#fedd55] transition-colors duration-300 group">
                 <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" />
                 <span>Garden Design & Landscaping</span>
               </Link>
-              <Link to="/gallery" className="flex items-center gap-2 text-gray-600 hover:text-[#fedd55] transition-colors duration-300 group">
-                <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" />
-                <span>Patios & Driveways</span>
-              </Link>
-              <Link to="/gallery" className="flex items-center gap-2 text-gray-600 hover:text-[#fedd55] transition-colors duration-300 group">
+              <Link to="/gallery?filter=Maintenance" className="flex items-center gap-2 text-gray-600 hover:text-[#fedd55] transition-colors duration-300 group">
                 <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" />
                 <span>Garden Maintenance</span>
               </Link>
-              <Link to="/gallery" className="flex items-center gap-2 text-gray-600 hover:text-[#fedd55] transition-colors duration-300 group">
+              <Link to="/gallery?filter=Maintenance" className="flex items-center gap-2 text-gray-600 hover:text-[#fedd55] transition-colors duration-300 group">
                 <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" />
-                <span>Lawn Care & Treatment</span>
+                <span>Exterior Cleaning</span>
               </Link>
-              <Link to="/gallery" className="flex items-center gap-2 text-gray-600 hover:text-[#fedd55] transition-colors duration-300 group">
-                <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" />
-                <span>Tree Surgery & Pruning</span>
-              </Link>
-              <Link to="/gallery" className="flex items-center gap-2 text-gray-600 hover:text-[#fedd55] transition-colors duration-300 group">
+              <Link to="/gallery?filter=Commercial" className="flex items-center gap-2 text-gray-600 hover:text-[#fedd55] transition-colors duration-300 group">
                 <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" />
                 <span>Commercial Landscaping</span>
               </Link>
-             </div>
+              <Link to="/gallery?filter=Commercial" className="flex items-center gap-2 text-gray-600 hover:text-[#fedd55] transition-colors duration-300 group">
+                <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" />
+                <span>Planting</span>
+              </Link>
+            </div>
           </div>
 
           {/* Contact & Social */}

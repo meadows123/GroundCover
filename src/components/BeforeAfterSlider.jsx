@@ -71,7 +71,7 @@ const BeforeAfterSlider = ({ beforeImage, afterImage }) => {
         <img  
           className="before-image" 
           alt="Before transformation"
-         src="https://images.unsplash.com/photo-1595872018818-97555653a011" />
+          src={beforeImage} />
         
         {/* After Image */}
         <img  
@@ -80,7 +80,7 @@ const BeforeAfterSlider = ({ beforeImage, afterImage }) => {
           style={{
             clipPath: `polygon(${sliderPosition}% 0%, 100% 0%, 100% 100%, ${sliderPosition}% 100%)`
           }}
-         src="https://images.unsplash.com/photo-1595872018818-97555653a011" />
+          src={afterImage} />
         
         {/* Slider Handle */}
         <div 
