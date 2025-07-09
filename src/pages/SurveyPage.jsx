@@ -229,7 +229,7 @@ const SurveyPage = () => {
                     value={surveyData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] transition-all"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] transition-all text-[#5B8B6B]"
                     placeholder="Enter your full name"
                   />
                 </div>
@@ -242,7 +242,7 @@ const SurveyPage = () => {
                     value={surveyData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] transition-all"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] transition-all text-[#5B8B6B]"
                     placeholder="your.email@example.com"
                   />
                 </div>
@@ -254,7 +254,7 @@ const SurveyPage = () => {
                   name="projectType"
                   value={surveyData.projectType}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] transition-all"
+                  className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] transition-all text-[#5B8B6B]"
                 >
                   <option value="">Select your project type</option>
                   {projectTypes.map((type) => (
@@ -312,7 +312,7 @@ const SurveyPage = () => {
                     onChange={handleInputChange}
                     required
                     rows={5}
-                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] transition-all resize-none"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] transition-all resize-none text-[#5B8B6B]"
                     placeholder="Please share your complete experience with GroundCover - from initial contact to project completion..."
                   />
                 </div>
@@ -324,7 +324,7 @@ const SurveyPage = () => {
                     value={surveyData.bestAspects}
                     onChange={handleInputChange}
                     rows={3}
-                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] transition-all resize-none"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#fedd55] transition-all resize-none text-[#5B8B6B]"
                     placeholder="Tell us what impressed you most..."
                   />
                 </div>
