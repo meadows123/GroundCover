@@ -352,6 +352,8 @@ const GalleryPage = () => {
                         filter: 'contrast(1.1) saturate(1.05) brightness(1.02) sepia(0.05)',
                       }}
                       loading="lazy"
+                      decoding="async"
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, 20vw"
                       onError={(e) => {
                         console.error('Failed to load image:', project.image);
                         e.target.src = '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/IMG_5031.jpeg'; // Fallback image
