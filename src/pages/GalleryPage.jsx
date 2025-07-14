@@ -170,10 +170,10 @@ const GalleryPage = () => {
     },
     {
       id: 3,
-      title: 'A Tidy Finish for an Untamed Hedge',
+      title: 'A Tidy Finish',
       beforeImage: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/before2.jpg',
       afterImage: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/after2.jpg',
-      description: 'We reshaped and pruned this unruly bush into a defined, well-maintained feature,'
+      description: 'We reshaped and pruned this unruly bush into a defined, well-maintained feature.'
     }
   ];
 
