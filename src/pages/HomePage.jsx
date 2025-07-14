@@ -219,7 +219,7 @@ const HomePage = () => {
               viewport={{ once: true }}
               className="text-center mt-16"
             >
-              <Link to="/gallery">
+              <Link to="/#/gallery">
                 <Button 
                   size="lg" 
                   className="bg-[#fedd55] hover:bg-[#fedd55] text-black font-semibold px-10 py-4 text-lg rounded-2xl shadow-xl transform hover:scale-105 transition-all duration-300"
