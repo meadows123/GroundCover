@@ -153,13 +153,13 @@ const AboutPage = () => {
               <h2 className="text-5xl font-bold text-[#5B8B6B] mb-8">Our Story</h2>
               <div className="space-y-6 text-lg text-[#7A5E3A] leading-relaxed">
                 <p>
-                  Founded in 2008, GroundCover began with a simple but powerful vision: to transform ordinary outdoor spaces into extraordinary landscapes that enhance both property value and quality of life.
+                  At Groundcover we specialise in high-quality grounds maintenance, landscaping, and plant care tailored to keep outdoor spaces tidy all year round. Our team has an understanding of plants, soil, and ecosystems, our expert team is passionate about creating and maintaining vibrant outdoor spaces that thrive naturally.
                 </p>
                 <p>
-                  What started as a small team of passionate landscape professionals has evolved into the South West's premier landscaping company, known for our innovative designs, meticulous craftsmanship, and unwavering commitment to client satisfaction.
+                  Whether you need regular maintenance for a commercial property, plant care advice, or ideas on how to boost biodiversity, our efficient and dedicated team brings precision, creativity, and ecological insight to every project.
                 </p>
                 <p>
-                  We believe that exceptional outdoor spaces should be accessible to everyone, which is why we offer comprehensive services from intimate garden makeovers to large-scale commercial projects, all delivered with the same attention to detail and professional excellence.
+                  We don't just maintain landscapes — we nurture them to support pollinators, encourage wildlife, and flourish sustainably. Let us help you turn your outdoor space into a living asset that's both functional and environmentally rich.
                 </p>
               </div>
               <div className="mt-8 grid grid-cols-3 gap-6">
