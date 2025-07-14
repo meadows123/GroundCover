@@ -156,24 +156,24 @@ const GalleryPage = () => {
   const featuredProjects = [
     {
       id: 1,
-      title: 'Transformation 1',
+      title: 'Elegant Chapel Revival',
       beforeImage: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/before.jpg',
       afterImage: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/after.jpg',
-      description: 'See the dramatic before and after of this project.'
+      description: 'We revitalized the chapel\'s flower beds with structured borders, fresh soil, and seasonal planting.'
     },
     {
       id: 2,
-      title: 'Transformation 2',
+      title: 'Planting Redefined',
       beforeImage: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/before1.JPG',
       afterImage: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/after1.JPG',
-      description: 'See the dramatic before and after of this project.'
+      description: 'What was once overgrown and uneven is now a balanced mix of greenery and flowering structure.'
     },
     {
       id: 3,
-      title: 'Transformation 3',
+      title: 'A Tidy Finish for an Untamed Hedge',
       beforeImage: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/before2.jpg',
       afterImage: '/images/wetransfer_img_6702-jpeg_2025-07-01_0636/after2.jpg',
-      description: 'See the dramatic before and after of this project.'
+      description: 'We reshaped and pruned this unruly bush into a defined, well-maintained feature,'
     }
   ];
 
