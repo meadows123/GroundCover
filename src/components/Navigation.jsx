@@ -9,9 +9,9 @@ const Navigation = () => {
   const location = useLocation();
 
   const navItems = [
-    { name: 'Home', path: '/#/' },
-    { name: 'Gallery', path: '/#/gallery' },
-    { name: 'About Us', path: '/#/about' },
+    { name: 'Home', path: '/' },
+    { name: 'Gallery', path: '/gallery' },
+    { name: 'About Us', path: '/about' },
   ];
 
   return (
