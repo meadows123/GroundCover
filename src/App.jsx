@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, HashRouter, Routes, Route } from 'react-router-dom';
 import { Toaster } from '@/components/ui/toaster';
 import HomePage from '@/pages/HomePage';
 import GalleryPage from '@/pages/GalleryPage';
@@ -11,8 +11,12 @@ import ScrollToTop from '@/components/ScrollToTop';
 import ContactForm from '@/components/ContactForm';
 
 function App() {
+  // Use HashRouter if your hosting doesn't support SPA routing
+  // Change this to HashRouter if you're still getting 404 errors
+  const RouterComponent = Router;
+  
   return (
-    <Router>
+    <RouterComponent>
       <ScrollToTop />
       <div className="min-h-screen bg-[#F5F5EB]">
         <Navigation />
@@ -26,7 +30,7 @@ function App() {
         <Footer />
         <Toaster />
       </div>
-    </Router>
+    </RouterComponent>
   );
 }
 
