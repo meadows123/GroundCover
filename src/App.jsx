@@ -9,28 +9,34 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
 import ContactForm from '@/components/ContactForm';
+import ErrorBoundary from '@/components/ErrorBoundary';
 
 function App() {
   // Use HashRouter if your hosting doesn't support SPA routing
   // Change this to HashRouter if you're still getting 404 errors
-  const RouterComponent = Router;
+  const RouterComponent = HashRouter;
+  
+  console.log('App component rendering...');
+  console.log('Current pathname:', window.location.pathname);
   
   return (
-    <RouterComponent>
-      <ScrollToTop />
-      <div className="min-h-screen bg-[#F5F5EB]">
-        <Navigation />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/gallery" element={<GalleryPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/survey" element={<SurveyPage />} />
-          <Route path="/contact" element={<ContactForm />} />
-        </Routes>
-        <Footer />
-        <Toaster />
-      </div>
-    </RouterComponent>
+    <ErrorBoundary>
+      <RouterComponent>
+        <ScrollToTop />
+        <div className="min-h-screen bg-[#F5F5EB]">
+          <Navigation />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/gallery" element={<GalleryPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/survey" element={<SurveyPage />} />
+            <Route path="/contact" element={<ContactForm />} />
+          </Routes>
+          <Footer />
+          <Toaster />
+        </div>
+      </RouterComponent>
+    </ErrorBoundary>
   );
 }
 
