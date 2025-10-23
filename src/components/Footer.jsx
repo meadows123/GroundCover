@@ -155,6 +155,24 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Website Design Credit */}
+        <div className="border-t border-gray-200 mt-8 pt-8 text-center">
+          <div className="mb-6">
+            <p className="text-gray-600 text-sm leading-relaxed max-w-2xl mx-auto">
+              Website designed and developed by{' '}
+              <a 
+                href="https://www.cisconnects.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-[#fedd55] hover:text-[#fedd55]/80 font-medium transition-colors duration-300"
+              >
+                Cisconnects
+              </a>
+              {' '}— creating beautiful, modern websites for businesses across the UK.
+            </p>
+          </div>
+        </div>
+
         {/* Copyright */}
         <div className="border-t border-gray-200 mt-8 pt-8 text-center">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
