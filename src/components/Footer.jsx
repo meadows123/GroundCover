@@ -161,12 +161,12 @@ const Footer = () => {
             <p className="text-black text-xs leading-relaxed max-w-2xl mx-auto font-medium">
               Website designed and developed by{' '}
               <a 
-                href="https://www.cisconnects.com" 
+                href="https://www.conxiea.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-[#fedd55] hover:text-[#fedd55]/80 font-bold transition-colors duration-300 underline"
               >
-                Cisconnects
+                Conxiea
               </a>
               .
             </p>
